@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herman Teng - Tech Blog & Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 2fr 1.2fr 0.6fr;
+            gap: 2rem;
+            height: 85vh;
+            max-height: 800px;
+            margin-top: 2rem;
+        }
+        .bento-item-1 {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+        }
+        .bento-item-2 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+        .bento-item-3 {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+        .bento-item-4 {
+            grid-column: 1 / 3;
+            grid-row: 3 / 4;
+        }
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            gap: 1rem;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .blog-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        .tech-carousel {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+        }
+        .tech-carousel-track {
+            display: inline-flex;
+            animation: scroll-left 40s linear infinite;
+            will-change: transform;
+        }
+        .tech-carousel-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link.active {
+            color: #3b82f6;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #3b82f6;
+            border-radius: 1px;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+    <!-- Website Content -->
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white sticky top-0 z-50 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo on left -->
+                    <div class="flex items-center">
+                        <img src="Embrace-Envole-Excel_logo-nbg.svg" 
+                             alt="EMBRACE EVOLVE EXCEL Logo" 
+                             class="h-24 w-auto mr-4">
+                    </div>
+                    
+                    <!-- Centered Herman Teng -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2">
+                        <div class="font-mono text-2xl font-bold text-gray-900">
+                            Herman Teng
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation on right -->
+                    <nav class="flex space-x-8">
+                        <a href="#" class="nav-link text-gray-700 hover:text-blue-600 font-medium active" onclick="showSection('home', this)">Home</a>
+                        <a href="#" class="nav-link text-gray-700 hover:text-blue-600 font-medium" onclick="showSection('portfolio', this)">Portfolio</a>
+                        <a href="#" class="nav-link text-gray-700 hover:text-blue-600 font-medium" onclick="showSection('blog', this)">Blog</a>
+                        <a href="#" class="nav-link text-gray-700 hover:text-blue-600 font-medium" onclick="showSection('about', this)">About Me</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-6 py-8">
+            <!-- Home Section -->
+            <div id="home" class="section active fade-in">
+                <div class="bento-grid">
+                    <!-- Profile Block -->
+                    <div class="bento-item-1 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 flex flex-col justify-start">
+                        <div class="text-center">
+                            <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300" 
+                                 alt="Herman Teng" 
+                                 class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg mx-auto mb-4">
+                            <h1 class="text-2xl font-bold text-gray-900 mb-3">Herman Teng</h1>
+                            <p class="text-lg text-gray-600 font-medium mb-2">Front-end Architect & Tech Blogger</p>
+                            <p class="text-base text-gray-500">Building the future of web experiences</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Featured Project Block -->
+                    <div class="bento-item-2 bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl p-6 overflow-hidden flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Featured Project</h3>
+                        <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Dashboard Interface" 
+                             class="w-full h-40 object-cover rounded-lg shadow-md flex-shrink-0">
+                        <div class="mt-4 flex-grow">
+                            <p class="text-base text-gray-600 mb-2 font-medium">Analytics Dashboard</p>
+                            <p class="text-sm text-gray-500 leading-relaxed">Full-stack dashboard with real-time analytics and comprehensive data visualization</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Latest Blog Block -->
+                    <div class="bento-item-3 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Latest Article</h3>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Modern React Patterns</h4>
+                        <p class="text-sm text-gray-600 mb-4">Exploring advanced React patterns and best practices for scalable applications with hooks and context.</p>
+                        <div class="text-xs text-gray-500 mb-3">Dec 15, 2024 • 8 min read</div>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Patterns</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Tech Stack Block -->
+                    <div class="bento-item-4 bg-gradient-to-r from-orange-50 to-red-100 rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Tech Stack</h3>
+                        <div class="tech-carousel">
+                            <div class="tech-carousel-track">
+                                <!-- First set of tech items -->
+                                <div class="flex items-center space-x-12 mr-12">
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">Az</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Microsoft Azure</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">DB</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Databricks</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">ADF</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Azure Data Factory</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">Py</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Python</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-400 rounded-lg flex items-center justify-center text-white font-bold text-xs">TB</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Tableau</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-yellow-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">PBI</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Power BI</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center text-white font-bold text-xs">K8s</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Kubernetes</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">MP</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Microsoft Purview</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center text-white font-bold text-xs">GH</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Github Copilot</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">⚡</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Apache Spark</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">CR</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Cursor AI</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">CL</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Claude Code</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">n8n</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">n8n</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center text-white font-bold text-xs">SQL</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">SQL</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">DO</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">DevOps</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">CI</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">CI/CD</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">DS</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">DeepSeek</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">MCP</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">MCP</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white font-bold text-xs">▲</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Next.js</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">N</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Node.js</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">NB</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">NotebookLM</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">M</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">MongoDB</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">⚛</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">React</span>
+                                    </div>
+                                </div>
+                                <!-- Duplicate set for seamless infinite loop -->
+                                <div class="flex items-center space-x-12 mr-12">
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">Az</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Microsoft Azure</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">DB</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Databricks</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">ADF</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Azure Data Factory</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">Py</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Python</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-400 rounded-lg flex items-center justify-center text-white font-bold text-xs">TB</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Tableau</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-yellow-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">PBI</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Power BI</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center text-white font-bold text-xs">K8s</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Kubernetes</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">MP</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Microsoft Purview</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center text-white font-bold text-xs">GH</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Github Copilot</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">⚡</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Apache Spark</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">CR</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Cursor AI</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">CL</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Claude Code</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">n8n</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">n8n</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center text-white font-bold text-xs">SQL</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">SQL</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">DO</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">DevOps</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">CI</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">CI/CD</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">DS</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">DeepSeek</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">MCP</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">MCP</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white font-bold text-xs">▲</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Next.js</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">N</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">Node.js</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">NB</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">NotebookLM</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">M</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">MongoDB</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 flex-shrink-0">
+                                        <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">⚛</div>
+                                        <span class="text-sm font-medium whitespace-nowrap">React</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Section -->
+            <div id="portfolio" class="section">
+                <div class="mb-8">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Portfolio</h2>
+                    <p class="text-xl text-gray-600">Recent projects and implementations</p>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="E-commerce Platform" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 cursor-pointer hover:text-blue-600 transition-colors duration-300">E-commerce Platform</h3>
+                            <p class="text-gray-600 mb-4">Full-stack e-commerce solution with modern UI/UX and advanced features.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Node.js</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">PostgreSQL</span>
+                            </div>
+                            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+                                Check Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Task Management App" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 cursor-pointer hover:text-blue-600 transition-colors duration-300">Task Management App</h3>
+                            <p class="text-gray-600 mb-4">Collaborative task management with real-time updates and team features.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Next.js</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">Firebase</span>
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">Tailwind</span>
+                            </div>
+                            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+                                Check Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Data Visualization Dashboard" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 cursor-pointer hover:text-blue-600 transition-colors duration-300">Data Visualization Dashboard</h3>
+                            <p class="text-gray-600 mb-4">Interactive dashboard for complex data analysis and reporting.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">D3.js</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Python</span>
+                            </div>
+                            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+                                Check Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Mobile Banking App" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 cursor-pointer hover:text-blue-600 transition-colors duration-300">Mobile Banking App</h3>
+                            <p class="text-gray-600 mb-4">Secure mobile banking interface with advanced security features.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">React Native</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">TypeScript</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">REST API</span>
+                            </div>
+                            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+                                Check Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Section -->
+            <div id="blog" class="section">
+                <div class="mb-8">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Blog</h2>
+                    <p class="text-xl text-gray-600">Latest articles and insights</p>
+                </div>
+                
+                <div class="space-y-8">
+                    <article class="blog-card bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+                        <div class="flex">
+                            <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                                 alt="React Development" 
+                                 class="w-64 h-48 object-cover">
+                            <div class="p-8 flex-1">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Modern React Patterns: Building Scalable Applications</h3>
+                                <div class="flex items-center mb-4">
+                                    <span class="text-sm text-gray-500">December 15, 2024</span>
+                                    <span class="mx-2 text-gray-300">•</span>
+                                    <span class="text-sm text-gray-500">8 min read</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">Exploring advanced React patterns including compound components, render props, and custom hooks. Learn how to build maintainable and scalable React applications using modern best practices and architectural patterns.</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span>
+                                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">JavaScript</span>
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Frontend</span>
+                                    </div>
+                                    <div class="flex items-center text-blue-600 hover:text-blue-800 font-medium cursor-pointer">
+                                        Read more →
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+                        <div class="flex">
+                            <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                                 alt="Performance Optimization" 
+                                 class="w-64 h-48 object-cover">
+                            <div class="p-8 flex-1">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Optimizing Web Performance: A Developer's Guide</h3>
+                                <div class="flex items-center mb-4">
+                                    <span class="text-sm text-gray-500">December 10, 2024</span>
+                                    <span class="mx-2 text-gray-300">•</span>
+                                    <span class="text-sm text-gray-500">12 min read</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">Deep dive into web performance optimization techniques including code splitting, lazy loading, and modern bundling strategies. Learn how to achieve sub-second load times and improve user experience.</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Performance</span>
+                                        <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Optimization</span>
+                                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">Web Dev</span>
+                                    </div>
+                                    <div class="flex items-center text-blue-600 hover:text-blue-800 font-medium cursor-pointer">
+                                        Read more →
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+                        <div class="flex">
+                            <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                                 alt="Microservices Architecture" 
+                                 class="w-64 h-48 object-cover">
+                            <div class="p-8 flex-1">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Microservices Architecture: Lessons from the Field</h3>
+                                <div class="flex items-center mb-4">
+                                    <span class="text-sm text-gray-500">December 5, 2024</span>
+                                    <span class="mx-2 text-gray-300">•</span>
+                                    <span class="text-sm text-gray-500">15 min read</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">Real-world insights from implementing microservices architecture in production. Covers service design, communication patterns, and common pitfalls to avoid when transitioning from monolithic applications.</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">Architecture</span>
+                                        <span class="px-3 py-1 bg-teal-100 text-teal-800 text-sm rounded-full">Microservices</span>
+                                        <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">Backend</span>
+                                    </div>
+                                    <div class="flex items-center text-blue-600 hover:text-blue-800 font-medium cursor-pointer">
+                                        Read more →
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- About Me Section -->
+            <div id="about" class="section">
+                <div class="mb-8">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                    <p class="text-xl text-gray-600">Get to know me better</p>
+                </div>
+                
+                <div class="about-grid">
+                    <div>
+                        <img src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Herman Teng Lifestyle" 
+                             class="w-full h-96 object-cover rounded-2xl shadow-lg">
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Hello, I'm Herman</h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                I'm a passionate front-end architect and tech blogger with over 8 years of experience building scalable web applications. I specialize in modern JavaScript frameworks, performance optimization, and creating exceptional user experiences.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                When I'm not coding, you can find me exploring new technologies, writing technical articles, or traveling to discover new cultures and perspectives. I believe that great software comes from understanding both the technical and human aspects of development.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                I'm always excited to collaborate on innovative projects and share knowledge with the development community through my blog and open-source contributions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Navigation functionality
+        function showSection(sectionId, navElement) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                targetSection.classList.add('fade-in');
+                
+                // Remove fade-in class after animation
+                setTimeout(() => {
+                    targetSection.classList.remove('fade-in');
+                }, 500);
+            }
+            
+            // Update navigation active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            if (navElement) {
+                navElement.classList.add('active');
+            }
+        }
+        
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html> 
