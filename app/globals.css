@@ -49,21 +49,12 @@
   
   .tech-carousel-track {
     display: inline-flex;
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 40s linear infinite;
     will-change: transform;
   }
   
   .tech-carousel-track:hover {
     animation-play-state: paused;
-  }
-
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
   }
   
   .project-card {
@@ -148,5 +139,14 @@
   
   .prose pre code {
     @apply bg-transparent p-0;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 } 
