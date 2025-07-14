@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import html from 'remark-html';
+import remarkRehype from 'remark-rehype';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeStringify from 'rehype-stringify';
 import { BlogPost, BlogPostFrontmatter, PaginatedPosts, BlogMetadata } from './types';
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
@@ -41,8 +43,12 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
     
-    // Process markdown content to HTML
-    const processedContent = await remark().use(html).process(content);
+    // Process markdown content to HTML with syntax highlighting
+    const processedContent = await remark()
+      .use(remarkRehype)
+      .use(rehypeHighlight)
+      .use(rehypeStringify)
+      .process(content);
     const contentHtml = processedContent.toString();
     
     // Validate frontmatter
