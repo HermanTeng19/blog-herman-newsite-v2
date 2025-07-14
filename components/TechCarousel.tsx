@@ -8,10 +8,10 @@ export default function TechCarousel() {
         <div className="flex items-center space-x-12 mr-12">
           {techStack.map((tech) => (
             <div key={`first-${tech.name}`} className="flex items-center space-x-3 flex-shrink-0">
-              <div className={`w-8 h-8 ${tech.color} rounded-lg flex items-center justify-center text-white font-bold text-xs`}>
+              <div className={`w-10 h-10 ${tech.color} rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-md`}>
                 {tech.shortName}
               </div>
-              <span className="text-sm font-medium whitespace-nowrap text-gray-900">{tech.name}</span>
+              <span className="text-sm font-bold whitespace-nowrap text-black drop-shadow-sm">{tech.name}</span>
             </div>
           ))}
         </div>
@@ -20,10 +20,10 @@ export default function TechCarousel() {
         <div className="flex items-center space-x-12 mr-12">
           {techStack.map((tech) => (
             <div key={`second-${tech.name}`} className="flex items-center space-x-3 flex-shrink-0">
-              <div className={`w-8 h-8 ${tech.color} rounded-lg flex items-center justify-center text-white font-bold text-xs`}>
+              <div className={`w-10 h-10 ${tech.color} rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-md`}>
                 {tech.shortName}
               </div>
-              <span className="text-sm font-medium whitespace-nowrap text-gray-900">{tech.name}</span>
+              <span className="text-sm font-bold whitespace-nowrap text-black drop-shadow-sm">{tech.name}</span>
             </div>
           ))}
         </div>
