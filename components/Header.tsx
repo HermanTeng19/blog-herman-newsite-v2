@@ -91,9 +91,9 @@ export default function Header() {
 
           {/* Centered Herman Teng */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <Link href="/" className="font-mono text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+            <Link href="/" className="transition-colors">
               <span 
-                className={`signature-text ${isAnimating ? 'animating' : ''}`}
+                className={`signature-text handwriting-style ${isAnimating ? 'animating' : ''}`}
                 onMouseEnter={handleMouseEnter}
               >
                 {displayedText}

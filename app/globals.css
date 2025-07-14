@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Dancing+Script:wght@400;500;600;700&family=Kalam:wght@300;400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -105,13 +105,22 @@
   .signature-text {
     display: inline-block;
     position: relative;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.05em;
     cursor: pointer;
     transition: all 0.3s ease;
   }
+
+  .handwriting-style {
+    font-family: 'Kalam', cursive;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    transform: rotate(-1deg);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
   
-  .signature-text.animating {
+  .signature-text.animating .handwriting-style {
     animation: signature-glow 0.5s ease-in-out infinite alternate;
   }
   
@@ -125,12 +134,12 @@
   
   @keyframes signature-glow {
     0% {
-      text-shadow: 0 0 3px rgba(59, 130, 246, 0.2);
-      transform: scale(1);
+      text-shadow: 0 0 3px rgba(59, 130, 246, 0.2), 1px 1px 2px rgba(0, 0, 0, 0.1);
+      transform: scale(1) rotate(-1deg);
     }
     100% {
-      text-shadow: 0 0 6px rgba(59, 130, 246, 0.4), 0 0 12px rgba(59, 130, 246, 0.2);
-      transform: scale(1.01);
+      text-shadow: 0 0 6px rgba(59, 130, 246, 0.4), 0 0 12px rgba(59, 130, 246, 0.2), 1px 1px 2px rgba(0, 0, 0, 0.1);
+      transform: scale(1.01) rotate(-1deg);
     }
   }
   
@@ -144,9 +153,10 @@
   }
   
   /* Hover effect */
-  .signature-text:hover {
-    text-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
-    transform: scale(1.02);
+  .signature-text:hover .handwriting-style {
+    color: #3b82f6;
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02) rotate(-1deg);
     transition: all 0.3s ease;
   }
   
