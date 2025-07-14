@@ -101,6 +101,82 @@
     @apply text-3xl font-bold text-gray-900 mb-4 mt-8;
   }
   
+  /* Signature animation styles */
+  .signature-text {
+    display: inline-block;
+    position: relative;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .signature-text.animating {
+    animation: signature-glow 0.5s ease-in-out infinite alternate;
+  }
+  
+  .signature-cursor {
+    display: inline-block;
+    animation: signature-blink 1s infinite;
+    color: #3b82f6;
+    font-weight: bold;
+    margin-left: 1px;
+  }
+  
+  @keyframes signature-glow {
+    0% {
+      text-shadow: 0 0 3px rgba(59, 130, 246, 0.2);
+      transform: scale(1);
+    }
+    100% {
+      text-shadow: 0 0 6px rgba(59, 130, 246, 0.4), 0 0 12px rgba(59, 130, 246, 0.2);
+      transform: scale(1.01);
+    }
+  }
+  
+  @keyframes signature-blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Hover effect */
+  .signature-text:hover {
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+  }
+  
+  /* Add subtle handwritten feel */
+  .signature-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .signature-text.animating::before {
+    opacity: 1;
+    animation: signature-sweep 2s ease-in-out;
+  }
+  
+  @keyframes signature-sweep {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
   .prose h3 {
     @apply text-2xl font-bold text-gray-900 mb-3 mt-6;
   }
