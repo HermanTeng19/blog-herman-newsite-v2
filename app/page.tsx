@@ -89,8 +89,8 @@ export default async function Home() {
         </div>
 
         {/* Tech Stack Block */}
-        <div className="bento-item-4 bg-gradient-to-r from-orange-50 to-red-100 rounded-2xl p-6">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">Tech Stack</h3>
+        <div className="bento-item-4 bg-gradient-to-r from-gray-900 to-black rounded-2xl p-6">
+          <h3 className="text-xl font-bold text-white mb-4">Tech Stack</h3>
           <TechCarousel />
         </div>
       </div>

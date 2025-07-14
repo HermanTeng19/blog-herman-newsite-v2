@@ -6,28 +6,28 @@ export default function TechCarousel() {
     
     return (
       <div key={`${prefix}-${tech.name}`} className="flex items-center space-x-3 flex-shrink-0">
-        <div className={`w-10 h-10 ${tech.color} rounded-xl flex items-center justify-center shadow-lg transition-transform hover:scale-110`}>
+        <div className={`w-12 h-12 ${tech.color} rounded-xl flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl border border-white/10`}>
           {isEmoji ? (
-            <span className="text-lg">{tech.shortName}</span>
+            <span className="text-xl">{tech.shortName}</span>
           ) : (
-            <span className="text-white font-bold text-xs">{tech.shortName}</span>
+            <span className="text-white font-bold text-sm">{tech.shortName}</span>
           )}
         </div>
-        <span className="text-sm font-medium text-gray-700 whitespace-nowrap">{tech.name}</span>
+        <span className="text-sm font-medium text-white whitespace-nowrap">{tech.name}</span>
       </div>
     );
   };
 
   return (
-    <div className="tech-carousel">
+    <div className="tech-carousel border border-white/10 rounded-lg p-4 bg-black/20">
       <div className="tech-carousel-track">
         {/* First set of tech items */}
-        <div className="flex items-center space-x-8 mr-8">
+        <div className="flex items-center space-x-10 mr-10">
           {techStack.map((tech) => renderTechItem(tech, 'first'))}
         </div>
         
         {/* Duplicate set for seamless infinite loop */}
-        <div className="flex items-center space-x-8 mr-8">
+        <div className="flex items-center space-x-10 mr-10">
           {techStack.map((tech) => renderTechItem(tech, 'second'))}
         </div>
       </div>
