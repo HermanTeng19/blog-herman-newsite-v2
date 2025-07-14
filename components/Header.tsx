@@ -32,9 +32,9 @@ export default function Header() {
               <Image
                 src="/Embrace-Envole-Excel_logo-nbg.svg"
                 alt="EMBRACE EVOLVE EXCEL Logo"
-                width={96}
-                height={96}
-                className="h-24 w-auto mr-4"
+                width={128}
+                height={128}
+                className="h-32 w-auto mr-4"
               />
             </Link>
           </div>
