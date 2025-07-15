@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import { BlogPost, BlogPostFrontmatter, PaginatedPosts, BlogMetadata } from './types';
 
@@ -43,9 +44,10 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
     
-    // Process markdown content to HTML with syntax highlighting
+    // Process markdown content to HTML with syntax highlighting and heading IDs
     const processedContent = await remark()
       .use(remarkRehype)
+      .use(rehypeSlug) // Add IDs to headings for Table of Contents navigation
       .use(rehypeHighlight)
       .use(rehypeStringify)
       .process(content);

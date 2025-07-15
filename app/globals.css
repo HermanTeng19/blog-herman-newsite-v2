@@ -94,6 +94,20 @@
     @apply text-gray-700 leading-relaxed;
   }
   
+  /* Table of Contents styling */
+  .prose h2[id], .prose h3[id], .prose h4[id], .prose h5[id], .prose h6[id] {
+    scroll-margin-top: 80px; /* Offset for fixed header */
+  }
+  
+  .prose a[href^="#"] {
+    @apply text-blue-600 hover:text-blue-800 no-underline;
+    transition: color 0.2s ease;
+  }
+  
+  .prose a[href^="#"]:hover {
+    @apply underline;
+  }
+  
   .prose h1 {
     @apply text-4xl font-bold text-gray-900 mb-6;
   }
