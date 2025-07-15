@@ -51,6 +51,8 @@ export const projects: Project[] = [
     description: 'Collaborative task management with real-time updates and team features.',
     image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600',
     technologies: ['Next.js', 'Firebase', 'Tailwind'],
+    link: 'https://taskmaster-demo.hermanteng.dev',
+    github: 'https://github.com/hermanteng/task-management-app',
     featured: true,
   },
   {
@@ -59,6 +61,8 @@ export const projects: Project[] = [
     description: 'Interactive dashboard for complex data analysis and reporting.',
     image: 'https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?auto=compress&cs=tinysrgb&w=600',
     technologies: ['D3.js', 'React', 'Python'],
+    link: 'https://dataviz-demo.hermanteng.dev',
+    github: 'https://github.com/hermanteng/data-viz-dashboard',
     featured: true,
   },
   {
@@ -67,6 +71,8 @@ export const projects: Project[] = [
     description: 'Secure mobile banking interface with advanced security features.',
     image: 'https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=600',
     technologies: ['React Native', 'TypeScript', 'REST API'],
+    link: 'https://mobile-banking-demo.hermanteng.dev',
+    github: 'https://github.com/hermanteng/mobile-banking-app',
     featured: true,
   },
   {
@@ -75,6 +81,8 @@ export const projects: Project[] = [
     description: 'Full-stack dashboard with real-time analytics and comprehensive data visualization',
     image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
     technologies: ['React', 'Node.js', 'D3.js', 'PostgreSQL'],
+    link: 'https://analytics-demo.hermanteng.dev',
+    github: 'https://github.com/hermanteng/analytics-dashboard',
     featured: true,
   },
   {
