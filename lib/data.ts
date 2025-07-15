@@ -24,15 +24,22 @@ export const techStack: TechStack[] = [
   { name: 'NotebookLM', shortName: 'NB', color: 'bg-blue-600' },
   { name: 'MongoDB', shortName: 'M', color: 'bg-green-500' },
   { name: 'React', shortName: '⚛', color: 'bg-blue-500' },
+  { name: 'TypeScript', shortName: 'TS', color: 'bg-blue-600' },
+  { name: 'PostgreSQL', shortName: 'PG', color: 'bg-blue-700' },
+  { name: 'Stripe', shortName: '$', color: 'bg-purple-600' },
+  { name: 'Redis', shortName: 'R', color: 'bg-red-600' },
+  { name: 'Docker', shortName: '🐳', color: 'bg-blue-500' },
 ];
 
 export const projects: Project[] = [
   {
     id: 'ecommerce-platform',
-    title: 'E-commerce Platform',
-    description: 'Full-stack e-commerce solution with modern UI/UX and advanced features.',
+    title: 'ShopCraft - Modern E-commerce Platform',
+    description: 'A comprehensive full-stack e-commerce solution featuring responsive design, secure payment processing, real-time inventory management, and advanced analytics. Built with modern technologies for optimal performance and scalability.',
     image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React', 'Node.js', 'PostgreSQL'],
+    technologies: ['React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL', 'Stripe', 'Redis', 'Docker'],
+    link: 'https://shopcraft-demo.hermanteng.dev',
+    github: 'https://github.com/hermanteng/shopcraft-ecommerce',
     featured: true,
   },
   {
@@ -69,7 +76,7 @@ export const projects: Project[] = [
   },
 ];
 
-export const featuredProject = projects.find(p => p.id === 'analytics-dashboard') || projects[0];
+export const featuredProject = projects.find(p => p.id === 'ecommerce-platform') || projects[0];
 
 export const profileInfo = {
   name: 'Herman Teng',
