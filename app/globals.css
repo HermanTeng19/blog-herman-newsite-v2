@@ -48,9 +48,14 @@
     width: 100%;
   }
   
-  .tech-carousel-inner {
+  .tech-carousel-track {
     display: inline-flex;
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 40s linear infinite;
+    will-change: transform;
+  }
+  
+  .tech-carousel-track:hover {
+    animation-play-state: paused;
   }
   
   .tech-item {
