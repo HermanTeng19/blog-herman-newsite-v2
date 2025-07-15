@@ -48,103 +48,102 @@
     width: 100%;
   }
   
-  .tech-carousel-track {
+  .tech-carousel-inner {
     display: inline-flex;
-    animation: scroll-left 40s linear infinite;
-    will-change: transform;
+    animation: scroll-left 30s linear infinite;
   }
   
-  .tech-carousel-track:hover {
-    animation-play-state: paused;
+  .tech-item {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-right: 3rem;
+    font-weight: 500;
+    color: #374151;
   }
   
-  .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .tech-item:last-child {
+    margin-right: 3rem;
   }
   
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  .tech-item-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
   }
   
   .blog-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
   
   .blog-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
   
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-top: 2rem;
-  }
-  
-  .prose {
-    @apply text-gray-700 leading-relaxed;
-  }
-  
-  /* Table of Contents styling */
-  .prose h2[id], .prose h3[id], .prose h4[id], .prose h5[id], .prose h6[id] {
-    scroll-margin-top: 80px; /* Offset for fixed header */
-  }
-  
-  .prose a[href^="#"] {
-    @apply text-blue-600 hover:text-blue-800 no-underline;
-    transition: color 0.2s ease;
-  }
-  
-  .prose a[href^="#"]:hover {
-    @apply underline;
-  }
-  
-  .prose h1 {
-    @apply text-4xl font-bold text-gray-900 mb-6;
-  }
-  
-  .prose h2 {
-    @apply text-3xl font-bold text-gray-900 mb-4 mt-8;
-  }
-  
-  /* Signature animation styles */
-  .signature-text {
-    display: inline-block;
+  .nav-link {
     position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    transition: color 0.2s ease-in-out;
   }
-
+  
+  .nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    border-radius: 1px;
+    animation: nav-underline 0.3s ease-in-out;
+  }
+  
+  @keyframes nav-underline {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  
   .handwriting-style {
     font-family: 'Kalam', cursive;
     font-size: 2.5rem;
     font-weight: 600;
     color: #1f2937;
-    letter-spacing: 0.05em;
-    line-height: 1.1;
+    text-shadow: 0 0 3px rgba(59, 130, 246, 0.2), 1px 1px 2px rgba(0, 0, 0, 0.1);
     transform: rotate(-1deg);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .signature-text {
+    position: relative;
+    overflow: hidden;
   }
   
   .signature-text.animating .handwriting-style {
-    animation: signature-glow 0.5s ease-in-out infinite alternate;
+    animation: signature-glow 2s ease-in-out;
   }
   
-  .signature-cursor {
-    display: inline-block;
-    animation: signature-blink 1s infinite;
-    color: #3b82f6;
-    font-weight: bold;
-    margin-left: 1px;
+  .signature-text.animating::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    animation: signature-sweep 2s ease-in-out;
   }
   
   @keyframes signature-glow {
@@ -235,7 +234,7 @@
   }
   
   .prose pre {
-    @apply bg-white border border-gray-200 p-4 rounded-lg overflow-x-auto mb-6 shadow-sm;
+    @apply bg-white border border-gray-200 p-4 rounded-lg overflow-x-auto mb-6 shadow-sm relative;
   }
   
   .prose pre code {
@@ -246,6 +245,104 @@
   .prose .hljs {
     @apply bg-transparent p-0;
   }
+
+  /* Language indicator for code blocks */
+  .prose pre code[class*="language-"]::before,
+  .prose pre code.hljs[class*="language-"]::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #e5e7eb;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    z-index: 10;
+  }
+
+  /* Extract language from class and set as data attribute */
+  .prose pre code[class*="language-javascript"]::before,
+  .prose pre code.hljs[class*="language-javascript"]::before { content: "JS"; }
+  .prose pre code[class*="language-typescript"]::before,
+  .prose pre code.hljs[class*="language-typescript"]::before { content: "TS"; }
+  .prose pre code[class*="language-python"]::before,
+  .prose pre code.hljs[class*="language-python"]::before { content: "PY"; }
+  .prose pre code[class*="language-java"]::before,
+  .prose pre code.hljs[class*="language-java"]::before { content: "JAVA"; }
+  .prose pre code[class*="language-html"]::before,
+  .prose pre code.hljs[class*="language-html"]::before { content: "HTML"; }
+  .prose pre code[class*="language-css"]::before,
+  .prose pre code.hljs[class*="language-css"]::before { content: "CSS"; }
+  .prose pre code[class*="language-scss"]::before,
+  .prose pre code.hljs[class*="language-scss"]::before { content: "SCSS"; }
+  .prose pre code[class*="language-json"]::before,
+  .prose pre code.hljs[class*="language-json"]::before { content: "JSON"; }
+  .prose pre code[class*="language-xml"]::before,
+  .prose pre code.hljs[class*="language-xml"]::before { content: "XML"; }
+  .prose pre code[class*="language-sql"]::before,
+  .prose pre code.hljs[class*="language-sql"]::before { content: "SQL"; }
+  .prose pre code[class*="language-bash"]::before,
+  .prose pre code.hljs[class*="language-bash"]::before { content: "BASH"; }
+  .prose pre code[class*="language-sh"]::before,
+  .prose pre code.hljs[class*="language-sh"]::before { content: "SH"; }
+  .prose pre code[class*="language-shell"]::before,
+  .prose pre code.hljs[class*="language-shell"]::before { content: "SHELL"; }
+  .prose pre code[class*="language-powershell"]::before,
+  .prose pre code.hljs[class*="language-powershell"]::before { content: "PS"; }
+  .prose pre code[class*="language-php"]::before,
+  .prose pre code.hljs[class*="language-php"]::before { content: "PHP"; }
+  .prose pre code[class*="language-ruby"]::before,
+  .prose pre code.hljs[class*="language-ruby"]::before { content: "RUBY"; }
+  .prose pre code[class*="language-go"]::before,
+  .prose pre code.hljs[class*="language-go"]::before { content: "GO"; }
+  .prose pre code[class*="language-rust"]::before,
+  .prose pre code.hljs[class*="language-rust"]::before { content: "RUST"; }
+  .prose pre code[class*="language-cpp"]::before,
+  .prose pre code.hljs[class*="language-cpp"]::before { content: "C++"; }
+  .prose pre code[class*="language-c"]::before,
+  .prose pre code.hljs[class*="language-c"]::before { content: "C"; }
+  .prose pre code[class*="language-csharp"]::before,
+  .prose pre code.hljs[class*="language-csharp"]::before { content: "C#"; }
+  .prose pre code[class*="language-swift"]::before,
+  .prose pre code.hljs[class*="language-swift"]::before { content: "SWIFT"; }
+  .prose pre code[class*="language-kotlin"]::before,
+  .prose pre code.hljs[class*="language-kotlin"]::before { content: "KOTLIN"; }
+  .prose pre code[class*="language-dart"]::before,
+  .prose pre code.hljs[class*="language-dart"]::before { content: "DART"; }
+  .prose pre code[class*="language-yaml"]::before,
+  .prose pre code.hljs[class*="language-yaml"]::before { content: "YAML"; }
+  .prose pre code[class*="language-yml"]::before,
+  .prose pre code.hljs[class*="language-yml"]::before { content: "YML"; }
+  .prose pre code[class*="language-toml"]::before,
+  .prose pre code.hljs[class*="language-toml"]::before { content: "TOML"; }
+  .prose pre code[class*="language-markdown"]::before,
+  .prose pre code.hljs[class*="language-markdown"]::before { content: "MD"; }
+  .prose pre code[class*="language-dockerfile"]::before,
+  .prose pre code.hljs[class*="language-dockerfile"]::before { content: "DOCKER"; }
+  .prose pre code[class*="language-nginx"]::before,
+  .prose pre code.hljs[class*="language-nginx"]::before { content: "NGINX"; }
+  .prose pre code[class*="language-apache"]::before,
+  .prose pre code.hljs[class*="language-apache"]::before { content: "APACHE"; }
+  .prose pre code[class*="language-r"]::before,
+  .prose pre code.hljs[class*="language-r"]::before { content: "R"; }
+  .prose pre code[class*="language-scala"]::before,
+  .prose pre code.hljs[class*="language-scala"]::before { content: "SCALA"; }
+  .prose pre code[class*="language-clojure"]::before,
+  .prose pre code.hljs[class*="language-clojure"]::before { content: "CLOJURE"; }
+  .prose pre code[class*="language-haskell"]::before,
+  .prose pre code.hljs[class*="language-haskell"]::before { content: "HASKELL"; }
+  .prose pre code[class*="language-lua"]::before,
+  .prose pre code.hljs[class*="language-lua"]::before { content: "LUA"; }
+  .prose pre code[class*="language-perl"]::before,
+  .prose pre code.hljs[class*="language-perl"]::before { content: "PERL"; }
+  .prose pre code[class*="language-vim"]::before,
+  .prose pre code.hljs[class*="language-vim"]::before { content: "VIM"; }
 
   @keyframes scroll-left {
     0% {
