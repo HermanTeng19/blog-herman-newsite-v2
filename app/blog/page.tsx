@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import BlogCard from '@/components/BlogCard';
+import GoToTopButton from '@/components/GoToTopButton';
 import { getPaginatedPosts } from '@/lib/blog';
 
 export default async function Blog() {
@@ -24,6 +25,8 @@ export default async function Blog() {
           </div>
         )}
       </div>
+      
+      <GoToTopButton />
     </Layout>
   );
 } 

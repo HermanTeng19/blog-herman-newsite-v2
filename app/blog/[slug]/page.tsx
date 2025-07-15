@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import Layout from '@/components/Layout';
+import GoToTopButton from '@/components/GoToTopButton';
 import { getPostBySlug, getAllPostSlugs } from '@/lib/blog';
 
 export async function generateStaticParams() {
@@ -52,6 +53,8 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
       </article>
+      
+      <GoToTopButton />
     </Layout>
   );
 } 

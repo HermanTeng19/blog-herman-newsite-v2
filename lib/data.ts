@@ -93,7 +93,7 @@ export const featuredProject = projects.find(p => p.id === 'ecommerce-platform')
 
 export const profileInfo = {
   name: 'Herman Teng',
-  title: 'Front-end Architect & Tech Blogger',
+  title: 'Senior Data Engineer & Tech Blogger',
   subtitle: 'Building the future of web experiences',
   profileImage: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300',
   aboutImage: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600',
