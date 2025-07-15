@@ -29,6 +29,9 @@ export const techStack: TechStack[] = [
   { name: 'Stripe', shortName: '$', color: 'bg-purple-600' },
   { name: 'Redis', shortName: 'R', color: 'bg-red-600' },
   { name: 'Docker', shortName: '🐳', color: 'bg-blue-500' },
+  { name: 'OpenAI', shortName: 'AI', color: 'bg-green-600' },
+  { name: 'Socket.io', shortName: '⚡', color: 'bg-gray-800' },
+  { name: 'TailwindCSS', shortName: 'TW', color: 'bg-cyan-500' },
 ];
 
 export const projects: Project[] = [
@@ -72,6 +75,16 @@ export const projects: Project[] = [
     description: 'Full-stack dashboard with real-time analytics and comprehensive data visualization',
     image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
     technologies: ['React', 'Node.js', 'D3.js', 'PostgreSQL'],
+    featured: true,
+  },
+  {
+    id: 'ai-notes-app',
+    title: 'NoteGenius - AI-Powered Online Notes App',
+    description: 'An intelligent note-taking application that leverages AI to enhance productivity. Features include smart categorization, automatic summarization, content suggestions, voice-to-text transcription, and collaborative editing with real-time AI assistance.',
+    image: 'https://images.pexels.com/photos/1591061/pexels-photo-1591061.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'OpenAI', 'MongoDB', 'Socket.io', 'TailwindCSS'],
+    link: 'https://notegenius-ai.hermanteng.dev',
+    github: 'https://github.com/hermanteng/notegenius-ai',
     featured: true,
   },
 ];
