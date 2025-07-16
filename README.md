@@ -86,6 +86,48 @@ featured: true
 Write your blog post content here using markdown syntax.
 ```
 
+### Using Local Images for Blog Post Featured Images
+
+You can use local images for your blog post's featured image instead of an external URL. This is recommended for better performance and reliability.
+
+#### 1. Store Your Image
+- Place your image in the `public/images/blog/` directory.
+- Example: `public/images/blog/my-awesome-post.jpg`
+
+#### 2. Reference the Image in Frontmatter
+- In your markdown file's frontmatter, set the `image` field to the relative path starting with `/images/blog/`:
+
+```markdown
+---
+title: "My Awesome Blog Post"
+date: "2024-05-20"
+excerpt: "A short summary of what this post is about."
+tags: ["Next.js", "React", "Tutorial"]
+image: "/images/blog/my-awesome-post.jpg"  # Local image path
+readingTime: "8 min read"
+author: "Herman Teng"
+---
+```
+
+#### 3. Best Practices
+- Recommended size: 1200x630px (16:9 ratio) for optimal display
+- File formats: JPG, PNG, or WebP
+- File size: Keep under 500KB for fast loading
+- Naming: Use descriptive names with hyphens (e.g., `nextjs-tutorial-2024.jpg`)
+
+#### 4. Example Directory Structure
+```
+public/
+  images/
+    blog/
+      my-awesome-post.jpg
+content/
+  posts/
+    my-awesome-post.md
+```
+
+Your blog post will now use the local image as its featured image, ensuring fast and reliable loading.
+
 ### Adding New Posts
 
 1. Create a new `.md` file in `content/posts/`
@@ -253,3 +295,47 @@ Give a ⭐️ if this project helped you!
 ---
 
 Built with ❤️ using Next.js, TypeScript, and Tailwind CSS 
+
+## 🛠️ How to Add or Modify a Project in the Portfolio
+
+### Adding a New Project
+1. Open `lib/data.ts` in your code editor.
+2. Locate the `projects` array. Each project is a JSON object inside this array.
+3. Copy an existing project object as a template:
+   ```js
+   {
+     id: 'your-unique-id',
+     title: 'Your Project Title',
+     description: 'A short description of your project.',
+     image: 'https://your-image-url.jpg',
+     technologies: ['React', 'Node.js', 'TypeScript'],
+     link: 'https://your-live-demo.com',
+     github: 'https://github.com/your-repo',
+     featured: false // or true if you want it to appear as Featured Project
+   },
+   ```
+4. Paste it after the last project in the array (but before the closing `];`).
+5. Fill in your own details for each field:
+   - `id`: Unique string, no spaces (e.g., 'my-cool-app')
+   - `title`: Name of your project
+   - `description`: Short summary
+   - `image`: URL to a project image (use a real image URL or upload to `public/images/projects/` and use a relative path)
+   - `technologies`: Array of tech used
+   - `link`: (Optional) Live demo URL
+   - `github`: (Optional) GitHub repo URL
+   - `featured`: `true` to show as Featured Project on Home page, otherwise `false`
+6. Save the file.
+7. Refresh your Portfolio page to see the new project.
+
+### Editing an Existing Project
+1. In `lib/data.ts`, find the project you want to edit in the `projects` array.
+2. Change any field (title, description, image, etc.) as needed.
+3. Save the file and refresh your site.
+
+### Tips
+- The `id` must be unique for each project.
+- Only one project should have `featured: true` for the Home page Featured Project.
+- Use high-quality images for best appearance.
+- If running in development (`npm run dev`), just save and refresh. For production, rebuild with `npm run build`.
+
+--- 
