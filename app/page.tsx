@@ -30,7 +30,7 @@ export default async function Home() {
 
         {/* Featured Project Block */}
         <div className="bento-item-2 bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl p-6 overflow-hidden flex flex-col">
-          <h3 className="text-xl font-extrabold text-gray-900 mb-4">Featured Project</h3>
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Featured Project</h3>
           <Link href="/portfolio" className="block">
             <Image
               src={featuredProject.image}
@@ -42,7 +42,7 @@ export default async function Home() {
           </Link>
           <div className="mt-4 flex-grow">
             <Link href="/portfolio">
-              <p className="text-base text-gray-600 mb-2 font-medium hover:text-blue-600 transition-colors cursor-pointer">
+              <p className="text-base text-gray-600 mb-2 font-bold hover:text-blue-600 transition-colors cursor-pointer">
                 {featuredProject.title}
               </p>
             </Link>
