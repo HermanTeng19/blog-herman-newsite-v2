@@ -29,24 +29,24 @@ export default async function Home() {
         </div>
 
         {/* Featured Project Block */}
-        <div className="bento-item-2 bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl p-6 overflow-hidden flex flex-col">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">Featured Project</h3>
+        <div className="bento-item-2 bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl p-6 flex flex-col">
+          <h3 className="text-xl font-bold text-gray-900 mb-3">Featured Project</h3>
           <Link href="/portfolio" className="block">
             <Image
               src={featuredProject.image}
               alt={featuredProject.title}
               width={600}
-              height={300}
-              className="w-full h-40 object-cover rounded-lg shadow-md flex-shrink-0 hover:scale-105 transition-transform duration-300"
+              height={240}
+              className="w-full h-32 object-cover rounded-lg shadow-md flex-shrink-0 hover:scale-105 transition-transform duration-300"
             />
           </Link>
-          <div className="mt-4 flex-grow">
+          <div className="mt-3 flex-grow min-h-0">
             <Link href="/portfolio">
               <p className="text-base text-gray-600 mb-2 font-bold hover:text-blue-600 transition-colors cursor-pointer">
                 {featuredProject.title}
               </p>
             </Link>
-            <p className="text-sm text-gray-500 leading-relaxed">{featuredProject.description}</p>
+            <p className="text-sm text-gray-500 leading-relaxed overflow-hidden">{featuredProject.description}</p>
           </div>
         </div>
 
