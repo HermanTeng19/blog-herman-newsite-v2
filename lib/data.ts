@@ -8,7 +8,7 @@ export const techStack: TechStack[] = [
   { name: 'Tableau', shortName: 'TB', color: 'bg-blue-400', logo: '/tech-logos/tableau.svg' },
   { name: 'Power BI', shortName: 'PBI', color: 'bg-yellow-600', logo: '/tech-logos/powerbi.svg' },
   { name: 'Kubernetes', shortName: 'K8s', color: 'bg-blue-700', logo: '/tech-logos/kubernetes.svg' },
-  { name: 'Microsoft Purview', shortName: 'MP', color: 'bg-purple-600' },
+  { name: 'Microsoft Purview', shortName: 'MP', color: 'bg-purple-600', logo: '/tech-logos/purview.svg' },
   { name: 'Github Copilot', shortName: 'GH', color: 'bg-gray-800', logo: '/tech-logos/github.svg' },
   { name: 'Apache Spark', shortName: '⚡', color: 'bg-orange-600', logo: '/tech-logos/apache-spark.svg' },
   { name: 'Cursor AI', shortName: 'CR', color: 'bg-blue-500' },
