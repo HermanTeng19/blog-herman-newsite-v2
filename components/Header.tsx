@@ -73,8 +73,8 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white sticky top-0 z-50 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 py-4">
+    <header className="bg-white sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 py-2">
         <div className="flex items-center justify-between">
           {/* Logo on left */}
           <div className="flex items-center">
@@ -82,9 +82,9 @@ export default function Header() {
               <Image
                 src="/Embrace-Envole-Excel_logo-nbg.svg"
                 alt="EMBRACE EVOLVE EXCEL Logo"
-                width={128}
-                height={128}
-                className="h-32 w-auto mr-4"
+                width={96}
+                height={96}
+                className="h-20 w-auto mr-4"
               />
             </Link>
           </div>
