@@ -43,7 +43,7 @@ export const projects: Project[] = [
     technologies: ['React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL', 'Stripe', 'Redis', 'Docker'],
     link: 'https://shopcraft-demo.hermanteng.dev',
     github: 'https://github.com/hermanteng/shopcraft-ecommerce',
-    featured: true,
+    featured: false,
   },
   {
     id: 'task-management-app',
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'Firebase', 'Tailwind'],
     link: 'https://taskmaster-demo.hermanteng.dev',
     github: 'https://github.com/hermanteng/task-management-app',
-    featured: true,
+    featured: false,
   },
   {
     id: 'data-visualization-dashboard',
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     technologies: ['D3.js', 'React', 'Python'],
     link: 'https://dataviz-demo.hermanteng.dev',
     github: 'https://github.com/hermanteng/data-viz-dashboard',
-    featured: true,
+    featured: false,
   },
   {
     id: 'mobile-banking-app',
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     technologies: ['React Native', 'TypeScript', 'REST API'],
     link: 'https://mobile-banking-demo.hermanteng.dev',
     github: 'https://github.com/hermanteng/mobile-banking-app',
-    featured: true,
+    featured: false,
   },
   {
     id: 'analytics-dashboard',
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     technologies: ['React', 'Node.js', 'D3.js', 'PostgreSQL'],
     link: 'https://analytics-demo.hermanteng.dev',
     github: 'https://github.com/hermanteng/analytics-dashboard',
-    featured: true,
+    featured: false,
   },
   {
     id: 'ai-notes-app',
@@ -93,11 +93,21 @@ export const projects: Project[] = [
     technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'OpenAI', 'MongoDB', 'Socket.io', 'TailwindCSS'],
     link: 'https://notegenius-ai.hermanteng.dev',
     github: 'https://github.com/hermanteng/notegenius-ai',
-    featured: true,
+    featured: false,
   },
+  {
+    id: 'modern-cms',
+    title: 'Modern Content Management System',
+    description: 'A robust and user-friendly CMS built for modern web projects. Features include rich text editing, media uploads, user roles, API integration, and real-time content preview.',
+    image: 'https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['React', 'Node.js', 'TypeScript', 'MongoDB', 'Express', 'TailwindCSS'],
+    link: 'https://moderncms-demo.hermanteng.dev',
+    github: 'https://github.com/hermanteng/modern-cms',
+    featured: true
+  }
 ];
 
-export const featuredProject = projects.find(p => p.id === 'ecommerce-platform') || projects[0];
+export const featuredProject = projects.find(p => p.featured) || projects[0];
 
 export const profileInfo = {
   name: 'Herman Teng',
