@@ -21,7 +21,7 @@ export const techStack: TechStack[] = [
   { name: 'MCP', shortName: 'MCP', color: 'bg-teal-600' },
   { name: 'Next.js', shortName: '▲', color: 'bg-black', logo: '/tech-logos/nextjs.svg' },
   { name: 'Node.js', shortName: 'N', color: 'bg-green-600', logo: '/tech-logos/nodejs.svg' },
-  { name: 'NotebookLM', shortName: 'NB', color: 'bg-blue-600' },
+  { name: 'NotebookLM', shortName: 'NB', color: 'bg-blue-600', logo: '/tech-logos/notebooklm.svg' },
   { name: 'MongoDB', shortName: 'M', color: 'bg-green-500', logo: '/tech-logos/mongodb.svg' },
   { name: 'React', shortName: '⚛', color: 'bg-blue-500', logo: '/tech-logos/react.svg' },
   { name: 'TypeScript', shortName: 'TS', color: 'bg-blue-600', logo: '/tech-logos/typescript.svg' },
