@@ -3,7 +3,7 @@ import { TechStack, Project } from './types';
 export const techStack: TechStack[] = [
   { name: 'Microsoft Azure', shortName: 'Az', color: 'bg-blue-600', logo: '/tech-logos/azure.svg' },
   { name: 'Databricks', shortName: 'DB', color: 'bg-red-500', logo: '/tech-logos/databricks.svg' },
-  { name: 'Azure Data Factory', shortName: 'ADF', color: 'bg-blue-500' },
+  { name: 'Azure Data Factory', shortName: 'ADF', color: 'bg-blue-500', logo: '/tech-logos/azure-data-factory.svg' },
   { name: 'Python', shortName: 'Py', color: 'bg-yellow-500', logo: '/tech-logos/python.svg' },
   { name: 'Tableau', shortName: 'TB', color: 'bg-blue-400', logo: '/tech-logos/tableau.svg' },
   { name: 'Power BI', shortName: 'PBI', color: 'bg-yellow-600', logo: '/tech-logos/powerbi.svg' },
