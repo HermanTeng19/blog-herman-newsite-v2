@@ -12,7 +12,7 @@ export const techStack: TechStack[] = [
   { name: 'Github Copilot', shortName: 'GH', color: 'bg-gray-800', logo: '/tech-logos/github.svg' },
   { name: 'Apache Spark', shortName: '⚡', color: 'bg-orange-600', logo: '/tech-logos/apache-spark.svg' },
   { name: 'Cursor AI', shortName: 'CR', color: 'bg-blue-500' },
-  { name: 'Claude Code', shortName: 'CL', color: 'bg-purple-500' },
+  { name: 'Claude Code', shortName: 'CL', color: 'bg-purple-500', logo: '/tech-logos/claude.svg' },
   { name: 'n8n', shortName: 'n8n', color: 'bg-pink-500', logo: '/tech-logos/n8n.svg' },
   { name: 'SQL', shortName: 'SQL', color: 'bg-gray-700' },
   { name: 'DevOps', shortName: 'DO', color: 'bg-green-600' },
