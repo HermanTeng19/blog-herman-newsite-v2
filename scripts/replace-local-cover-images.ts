@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import 'dotenv/config';
+const fs = require('fs');
+const path = require('path');
+const matter = require('gray-matter');
+require('dotenv/config');
 
 // === CONFIGURATION ===
 const POSTS_DIR = path.join(__dirname, '../content/posts');
@@ -15,11 +15,11 @@ if (!PEXELS_API_KEY || !UNSPLASH_ACCESS_KEY) {
 }
 
 // === Helper Functions ===
-function isLocalImage(imagePath: string): boolean {
+function isLocalImage(imagePath: any) {
   return LOCAL_IMAGE_PREFIXES.some(prefix => imagePath.startsWith(prefix));
 }
 
-async function searchPexels(query: string): Promise<string | null> {
+async function searchPexels(query: any) {
   const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=1`;
   const res = await fetch(url, {
     headers: { Authorization: PEXELS_API_KEY },
@@ -29,7 +29,7 @@ async function searchPexels(query: string): Promise<string | null> {
   return data.photos?.[0]?.src?.original || null;
 }
 
-async function searchUnsplash(query: string): Promise<string | null> {
+async function searchUnsplash(query: any) {
   const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=1&client_id=${UNSPLASH_ACCESS_KEY}`;
   const res = await fetch(url);
   if (!res.ok) return null;
@@ -37,7 +37,7 @@ async function searchUnsplash(query: string): Promise<string | null> {
   return data.results?.[0]?.urls?.regular || null;
 }
 
-async function findBestOnlineImage(query: string): Promise<string | null> {
+async function findBestOnlineImage(query: any) {
   // Try Pexels first, then Unsplash
   let image = await searchPexels(query);
   if (image) return image;
@@ -45,7 +45,7 @@ async function findBestOnlineImage(query: string): Promise<string | null> {
   return image;
 }
 
-async function processPost(filePath: string) {
+async function processPost(filePath: any) {
   const raw = fs.readFileSync(filePath, 'utf-8');
   const { data, content } = matter(raw);
   if (!data.image || !isLocalImage(data.image)) return false;
@@ -66,7 +66,7 @@ async function processPost(filePath: string) {
 }
 
 async function main() {
-  const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
+  const files = fs.readdirSync(POSTS_DIR).filter((f: any) => f.endsWith('.md'));
   for (const file of files) {
     const filePath = path.join(POSTS_DIR, file);
     await processPost(filePath);
