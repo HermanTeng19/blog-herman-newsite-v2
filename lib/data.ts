@@ -114,7 +114,7 @@ export const profileInfo = {
   name: 'Herman Teng',
   title: 'Senior Data Engineer & Tech Blogger',
   subtitle: 'Building the future with Power of AI',
-  profileImage: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300',
+  profileImage: '/images/herman-profile.png',
   aboutImage: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600',
   bio: {
     intro: "I'm a passionate front-end architect and tech blogger with over 8 years of experience building scalable web applications. I specialize in modern JavaScript frameworks, performance optimization, and creating exceptional user experiences.",
