@@ -14,7 +14,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/sqlsandbox.jpg
+image: 'https://images.pexels.com/photos/3811082/pexels-photo-3811082.jpeg'
 ---
 
 At beginning, I'd like to share a story from my client and business partner. One day, my team worked on a big marketing project, data from all kinds of source like spreadsheet, csv, mainframe and SQL Server, we had to do cross reference all those data to generate analysis reports but the headache thing was they were isolated and no way to put them into a single unique environment to run one time query then return the results so we could only open multiple windows to compare them by eyeballs. 

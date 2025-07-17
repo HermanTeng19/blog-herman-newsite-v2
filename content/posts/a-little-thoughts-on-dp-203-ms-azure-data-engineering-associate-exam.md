@@ -14,7 +14,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/dp-203_certs.png
+image: 'https://images.pexels.com/photos/14760607/pexels-photo-14760607.jpeg'
 ---
 
 The evolution of cloud computing over the past years has been becoming the most impacted event in both technology and business world. More and more companies from almost all industries such as financial, manufacture, education, Hi-Tech have migrated or are deploying their computing platform onto cloud, cloud provides the capabilities to be able to integrate company's all resources into a focal place, which breaks the isolations and obstacles on all kinds of business operations and implementations, one of the most important digital assets among those resources is data. In that circumstance, data engineer with cloud computing background and experience becomes highly demanded in workplace and job market, and a shortcut to crack into this career path is getting a certification in the subject.

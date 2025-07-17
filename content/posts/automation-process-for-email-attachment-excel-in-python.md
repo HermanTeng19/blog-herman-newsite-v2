@@ -14,7 +14,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/pythonexcelribbon.webp
+image: 'https://images.pexels.com/photos/7111574/pexels-photo-7111574.jpeg'
 ---
 
 Working with business data, **Excel spreadsheet** is the most common file type you might deal with in daily basis, because Excel is a dominated application in the business world. What is the most used way to transfer those Excel files for business operation team, obviously, it's **Outlook**, because email attachment is the easiest way for business team to share data and reports. Following this business common logic and convention, you may get quite a lot Excel files from email attachment when you involved into a business initiative or project to design a data solution for BI reporting and business analysis.

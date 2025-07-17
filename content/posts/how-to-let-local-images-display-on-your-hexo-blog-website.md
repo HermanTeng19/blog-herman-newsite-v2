@@ -15,7 +15,7 @@ tags:
   - IT
 author: Herman Teng
 featured: false
-image: /img/hexoribbon.jpg
+image: 'https://images.pexels.com/photos/19825351/pexels-photo-19825351.jpeg'
 ---
 
 Hexo blog framework friendly supports markdown which is the most popular syntax for technical blog writing. When you try to illustrate some ideas, it's common to use screenshot photos in your articles to get reader better understanding so that you have to insert images into your blog, unlike typing text content that is straight forward, inserting images and deploying them to public blog site might be some tricks there, let's see some common scenarios on images display issue and how to resolved them.

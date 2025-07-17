@@ -14,7 +14,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/blockingribbon.webp
+image: 'https://images.pexels.com/photos/7018654/pexels-photo-7018654.jpeg'
 ---
 
 From function perspective, to maintain a large scale business data warehouse is for making database system stable, robust and fast, which is a essential part to boost business team productivity and performance. However, for business users, the fundamental thing is **data**, so data can be delivered in high frequency and in time is the cornerstone for all business analysis and BI reporting. Obviously, the primary mandate for data management team is highly monitor ETL jobs to promise data process running well and smooth and never being blocked or corrupt by using process.

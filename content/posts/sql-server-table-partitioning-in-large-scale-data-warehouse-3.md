@@ -12,7 +12,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/partitionmergeribbon.jpg
+image: 'https://images.pexels.com/photos/6249395/pexels-photo-6249395.jpeg'
 ---
 
 This post is the last part on series of table partitioning, as plan this part is going to focus on some advanced topics like partition merge, split, conversion and performance optimization in terms of different business demands.

@@ -12,7 +12,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/pyvirtualenvribbon1.jpg
+image: 'https://images.pexels.com/photos/7325498/pexels-photo-7325498.jpeg'
 ---
 
 If you have basic python experience and knowledge and willing to develop a real python application or product, I think that post is right for you. Let's recap how do we start to use `Python`, we either go to official site to download python, install it on system wise then jump start to write "Hello, world!" or install `Anaconda` to get a long list of pre-installed libraries and then do the same thing. I would say that is totally ok by using python globally or system wise at the beginning stage, but as we accumulate enough python scripts and  do the real python project, we may found something really painful during our development

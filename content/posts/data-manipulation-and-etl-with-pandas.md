@@ -14,7 +14,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/pandassqlribbon.jpg
+image: 'https://images.pexels.com/photos/1102797/pexels-photo-1102797.png'
 ---
 
 Pandas is the most used library in Python to manipulate data and deal with data transformation, by leveraging `Pandas` in memory data frame and abundant build-in functions in terms of data frame, it almost can handle all kinds of ETL task. We are going to talk about a data process to read input data from `Excel Spreadsheet`, make some data transformations by business requirement then load reporting data into `SQL Server` database.

@@ -16,7 +16,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/pysql.jpeg
+image: 'https://images.pexels.com/photos/3861976/pexels-photo-3861976.jpeg'
 ---
 
 Python is a good scripting language to boost your productivity on data analysis and BI reporting. As open source language, you can easily get the binary installation file from [python official site](https://www.python.org) for windows and source code on vary versions for Linux, in production, it's better choose installation approach by source code.

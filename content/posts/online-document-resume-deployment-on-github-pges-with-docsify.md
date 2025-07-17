@@ -13,7 +13,7 @@ tags:
   - Web
 author: Herman Teng
 featured: false
-image: /img/github_docsify.jpg
+image: 'https://images.pexels.com/photos/4584830/pexels-photo-4584830.jpeg'
 ---
 
 Pandemic changes the world dramatically, digitalization and virtualization like tide are becoming unstoppable and deeply impact the way we are living. Meta is coming up and becomes prevalent under this circumstance. We are to be pushed to think seriously how to build personal platform to present ourselves and allocate our resources efficiently, one of the most important personal documents is **resume**,  but for people who don't have development background that is never easy even so many technologies we can utilize, because the basic web technologies such as `html`, `css`, `javascript`, `node.js`, `mysql` and `mongodb` are still used as cornerstone and unavoidable, some web framework like `react.js`, `angular` and `vue.js` are even more overwhelming for non technical person. The question is now what is the most cost efficient way to deploy and manage online resources by using the least technology? Cost efficient here includes both economic and work effort, you might say there are a lot of web services like Wix.com to provide no coding and one stop web solution but it is expensive so that there is no perfect solution but least effort one, after given a quit a lot of tries, there is a way by using technologies with the shortest learning curve to be able to quickly deploy your digital resume online for free, they are

@@ -14,7 +14,7 @@ tags:
   - Web
 author: Herman Teng
 featured: false
-image: /img/customDomain_githubpage_hosting.jpg
+image: 'https://images.pexels.com/photos/7129617/pexels-photo-7129617.jpeg'
 ---
 
 From previous posting, **"Online Document/Resume Deployment on Github Pges with Docsify"**, we discussed the way to deploy static web pages and online documents onto `Github Pages` so that we can save our cost on web hosting, but what if we want to use custom domain like `usernameresume.net` or `resume.username.net` rather than `username.github.io` or `username.github.io/pagename`? The answer is we can because github provides that functionality to host website by using custom domain, all we need to do is simply 3 steps

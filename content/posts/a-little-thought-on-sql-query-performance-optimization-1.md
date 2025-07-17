@@ -13,7 +13,7 @@ tags:
   - Data
 author: Herman Teng
 featured: false
-image: /img/querytuning.jpg
+image: 'https://images.pexels.com/photos/2882652/pexels-photo-2882652.jpeg'
 ---
 
 Working with data and database, writing query is daily routine, query running time might be big different for different queries but serve the same purpose, which shows query performance is not 100 percent determined by database system configuration, server hard ware, table index and statistics etc. but how well do you use SQL to construct your query. 

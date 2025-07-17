@@ -14,7 +14,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/linuxlvmribbon.jpg
+image: 'https://images.pexels.com/photos/16587313/pexels-photo-16587313.jpeg'
 ---
 
 Virtual machine is a major way to setup `Linus` development environment in `Windows PC`. One of the great things about newly Linux distro such as `RHEL, Ubuntu, Centos` etc is that most of them adopt to a LVM (Logical Volume Manager) filesystem which is a natural fit for Linux virtualized system like `VMware` or `VitualBox`.

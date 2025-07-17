@@ -12,7 +12,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/partitionswitchribbon.webp
+image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg'
 ---
 
 This post is part 2, we are focusing on design and create data process to extract, transform and load  (ETL) big amount data into partitioned tables to be able to integrate to SSIS package then operate ETL process by scheduled job automatically. 

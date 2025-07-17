@@ -16,7 +16,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/hadoopsqlribbon.png
+image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg'
 ---
 
 Agile development and DevOps bring flexibilities and quick solutions to support business intelligent in timely manners. A technical platform and its associated applications and tools are able to turnaround very quick so that business analysts and data scientists would be able to leverage them to do the data modeling or machine learning, but in the other side, unlike functions buildup, data sync across different platforms is not that easy and quick especially for large organizations.

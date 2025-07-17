@@ -14,7 +14,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/oracleconfig.jpg
+image: 'https://images.pexels.com/photos/28945116/pexels-photo-28945116.jpeg'
 ---
 
 The client side need to do some configurations after Oracle 11g upgrade to 12C on Server in order to make database server is connectable. Before starting to configurate your clients, you have to get the below new server information from DBA

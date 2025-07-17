@@ -12,7 +12,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/tablepartitionribbon1.jpg
+image: 'https://images.pexels.com/photos/3861976/pexels-photo-3861976.jpeg'
 ---
 
 This is a series articles to demonstrate table partitioning technology and how to apply it in a large scale data warehouse to improve database performance and even benefit for maintenance operation based on Microsoft SQL Server. This series is composed by three parts

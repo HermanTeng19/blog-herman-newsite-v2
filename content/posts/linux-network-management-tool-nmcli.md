@@ -13,7 +13,7 @@ tags:
   - IT
 author: Herman Teng
 featured: false
-image: /img/linuxnetworkribbon.jpg
+image: 'https://images.pexels.com/photos/11035538/pexels-photo-11035538.jpeg'
 ---
 
 There are over 60 Linux networking commands you can utilize to do all the system network configurations, some of them are well known and widely used such as `ifconfig`, `ip addr`, `traceroute`, `netstat` and `ping` etc.., one command is very useful but relatively few being used, that is `nmcli` which is used for controlling your network, just like its name network manager and also can do all the thing to configure your network like displaying network device status, create, edit, activate/deactivate and delete network connection.

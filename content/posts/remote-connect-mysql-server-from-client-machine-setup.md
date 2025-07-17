@@ -13,7 +13,7 @@ tags:
   - BI
 author: Herman Teng
 featured: false
-image: /img/mysqlribbon.png
+image: 'https://images.pexels.com/photos/19226354/pexels-photo-19226354.jpeg'
 ---
 
 You can only connect to MySQL Server from localhost after MySQL installation by default, but in production, all MySQL clients remotely connect to server, for simulating real production environment in your home network, some configurations need to be made to be able to let you connect MySQL from client machine other than localhost.

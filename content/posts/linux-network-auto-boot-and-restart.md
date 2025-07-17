@@ -12,7 +12,7 @@ tags:
   - IT
 author: Herman Teng
 featured: false
-image: /img/centosribbon.jpg
+image: 'https://images.pexels.com/photos/4705607/pexels-photo-4705607.jpeg'
 ---
 
 Centos 7 network is disabled by default after installation and initialization, which causes network connection can not be made until you manually turn on it

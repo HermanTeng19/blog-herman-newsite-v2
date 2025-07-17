@@ -14,7 +14,7 @@ tags:
   - Data
 author: Herman Teng
 featured: false
-image: /img/adls_databricks_banner.png
+image: https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 In today's technology industry, Databricks has undoubtedly become a unicorn company in big data distributed processing, data analysis, data visualization, and machine learning. In the current era of cloud computing, the three major cloud service providers, Microsoft, Amazon, and Google, have all incorporated Databricks into their cloud computing platforms. This shows Databricks' unique contribution to data cloud computing and its pivotal role in the development of enterprise-level data products.
@@ -95,3 +95,5 @@ We can also reference a video in YouTube on this technology
 ### Mount ADLS Container to Databricks DBFS
 
  There is a great article in `Medium` to introduce that technology with name [**Mount ADLS on Databricks**](https://medium.com/@nakhtar.etc/mount-adls-on-databricks-fe3b54da07be), click the article name to redirect to the article site.
+
+```

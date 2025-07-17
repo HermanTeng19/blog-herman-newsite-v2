@@ -11,7 +11,7 @@ tags:
   - IT
 author: Herman Teng
 featured: false
-image: /img/waytoexcel.jpg
+image: 'https://images.pexels.com/photos/3803517/pexels-photo-3803517.jpeg'
 ---
 
 This is some tip but sometime makes you life easier when you work with business team and deal with data from business input. Excel spreadsheet is kind of standard file format to communicate with business team, but in data manipulation side, it's not a ideal input data format, technically, we usually convert spreadsheet to csv file. But default comma delimiter might cause some trouble because business data might contains quite a lot of `,` in attributes such as comments, suggestions, reasons etc. In order to better identify the column, non-comma delimiter should be used like `|` pipe.

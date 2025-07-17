@@ -13,7 +13,7 @@ tags:
   - IT
 author: Herman Teng
 featured: false
-image: /img/sparkpythonribbon.jpg
+image: 'https://images.pexels.com/photos/6931347/pexels-photo-6931347.jpeg'
 ---
 
 Spark has been reported to be one of the most valuable tech skills to learn by data professionals and demand for Spark and Big Data skill has exploded in recent years. As one of the latest technologies in the big data space, Spark is quickly becoming one of the most powerful Big Data tools for data processing and machine learning, its ability to run programs up to 100x faster than Hadoop MapReduce in memory. 
