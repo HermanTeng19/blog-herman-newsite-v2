@@ -32,6 +32,7 @@ export const techStack: TechStack[] = [
   { name: 'OpenAI', shortName: 'AI', color: 'bg-green-600', logo: '/tech-logos/openai.svg' },
   { name: 'TailwindCSS', shortName: 'TW', color: 'bg-cyan-500', logo: '/tech-logos/tailwindcss.svg' },
   { name: 'Gemini', shortName: 'GM', color: 'bg-blue-500', logo: '/tech-logos/gemini.svg' },
+  { name: 'Microsoft Fabric', shortName: 'MF', color: 'bg-indigo-700', logo: '/tech-logos/fabric.svg' },
 ];
 
 export const projects: Project[] = [
