@@ -113,7 +113,7 @@ export const featuredProject = projects.find(p => p.featured) || projects[0];
 export const profileInfo = {
   name: 'Herman Teng',
   title: 'Senior Data Engineer & Tech Blogger',
-  subtitle: 'Building the future of web experiences',
+  subtitle: 'Building the future with Power of AI',
   profileImage: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300',
   aboutImage: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600',
   bio: {

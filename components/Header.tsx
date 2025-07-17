@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { profileInfo } from '@/lib/data';
+import ThemeToggle from './ThemeToggle';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -73,7 +74,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white sticky top-0 z-50">
+    <header className="bg-white dark:bg-gray-900 sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-2">
         <div className="flex items-center justify-between">
           {/* Logo on left */}
@@ -102,22 +103,25 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Navigation on right */}
-          <nav className="flex space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors relative ${
-                  isActive(item.href) 
-                    ? 'text-blue-600 after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:h-0.5 after:bg-blue-600 after:rounded-sm' 
-                    : ''
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          {/* Navigation and Theme Toggle on right */}
+          <div className="flex items-center space-x-6">
+            <nav className="flex space-x-8">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors relative ${
+                    isActive(item.href) 
+                      ? 'text-blue-600 dark:text-blue-400 after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:rounded-sm' 
+                      : ''
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>

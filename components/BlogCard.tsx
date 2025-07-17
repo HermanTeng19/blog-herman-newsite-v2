@@ -13,7 +13,7 @@ export default function BlogCard({ post, layout = 'horizontal' }: BlogCardProps)
 
   if (layout === 'vertical') {
     return (
-      <article className="blog-card bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+      <article className="blog-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
         <Image
           src={post.image || 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600'}
           alt={post.title}
@@ -23,22 +23,22 @@ export default function BlogCard({ post, layout = 'horizontal' }: BlogCardProps)
         />
         <div className="p-6">
           <Link href={`/blog/${post.slug}`}>
-            <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors cursor-pointer">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer">
               {post.title}
             </h3>
           </Link>
           <div className="flex items-center mb-4">
-            <span className="text-sm text-gray-500">{formattedDate}</span>
-            <span className="mx-2 text-gray-300">•</span>
-            <span className="text-sm text-gray-500">{post.readingTime}</span>
+            <span className="text-sm text-gray-500 dark:text-gray-400">{formattedDate}</span>
+            <span className="mx-2 text-gray-300 dark:text-gray-600">•</span>
+            <span className="text-sm text-gray-500 dark:text-gray-400">{post.readingTime}</span>
           </div>
-          <p className="text-gray-600 mb-4">{post.excerpt}</p>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
           <div className="flex items-center justify-between">
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full"
                 >
                   {tag}
                 </span>
@@ -46,7 +46,7 @@ export default function BlogCard({ post, layout = 'horizontal' }: BlogCardProps)
             </div>
             <Link
               href={`/blog/${post.slug}`}
-              className="flex items-center text-blue-600 hover:text-blue-800 font-medium cursor-pointer"
+              className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium cursor-pointer"
             >
               Read more →
             </Link>
@@ -57,7 +57,7 @@ export default function BlogCard({ post, layout = 'horizontal' }: BlogCardProps)
   }
 
   return (
-    <article className="blog-card bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+    <article className="blog-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
       <div className="flex">
         <Image
           src={post.image || 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600'}
@@ -68,22 +68,22 @@ export default function BlogCard({ post, layout = 'horizontal' }: BlogCardProps)
         />
         <div className="p-8 flex-1">
           <Link href={`/blog/${post.slug}`}>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors cursor-pointer">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer">
               {post.title}
             </h3>
           </Link>
           <div className="flex items-center mb-4">
-            <span className="text-sm text-gray-500">{formattedDate}</span>
-            <span className="mx-2 text-gray-300">•</span>
-            <span className="text-sm text-gray-500">{post.readingTime}</span>
+            <span className="text-sm text-gray-500 dark:text-gray-400">{formattedDate}</span>
+            <span className="mx-2 text-gray-300 dark:text-gray-600">•</span>
+            <span className="text-sm text-gray-500 dark:text-gray-400">{post.readingTime}</span>
           </div>
-          <p className="text-gray-600 mb-4">{post.excerpt}</p>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
           <div className="flex items-center justify-between">
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full"
                 >
                   {tag}
                 </span>
@@ -91,7 +91,7 @@ export default function BlogCard({ post, layout = 'horizontal' }: BlogCardProps)
             </div>
             <Link
               href={`/blog/${post.slug}`}
-              className="flex items-center text-blue-600 hover:text-blue-800 font-medium cursor-pointer"
+              className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium cursor-pointer"
             >
               Read more →
             </Link>
