@@ -3,25 +3,39 @@ title: "Modern React Patterns: Building Scalable Applications"
 date: "2024-12-15"
 excerpt: "Exploring advanced React patterns including compound components, render props, and custom hooks. Learn how to build maintainable and scalable React applications using modern best practices and architectural patterns."
 tags: ["React", "JavaScript", "Frontend"]
-image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600"
+coverImage: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 featured: true
 ---
 
 # Modern React Patterns: Building Scalable Applications
 
+![Modern React Development](https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+*Close-up of programming code on a computer screen, representing modern React development*
+
 React has evolved significantly since its introduction, and with it, the patterns and practices for building scalable applications have also advanced. In this comprehensive guide, we'll explore the most effective modern React patterns that can help you build maintainable, scalable, and performant applications.
 
 ## Table of Contents
 
-1. [Compound Components](#compound-components)
-2. [Render Props](#render-props)
-3. [Custom Hooks](#custom-hooks)
-4. [Context API Best Practices](#context-api-best-practices)
-5. [Performance Optimization Patterns](#performance-optimization-patterns)
+- [Modern React Patterns: Building Scalable Applications](#modern-react-patterns-building-scalable-applications)
+  - [Table of Contents](#table-of-contents)
+  - [Compound Components](#compound-components)
+  - [Render Props](#render-props)
+  - [Custom Hooks](#custom-hooks)
+  - [Context API Best Practices](#context-api-best-practices)
+  - [Performance Optimization Patterns](#performance-optimization-patterns)
+    - [React.memo for Component Memoization](#reactmemo-for-component-memoization)
+    - [useMemo and useCallback for Expensive Operations](#usememo-and-usecallback-for-expensive-operations)
+  - [Conclusion](#conclusion)
+  - [Further Reading](#further-reading)
 
 ## Compound Components
 
 The compound component pattern allows you to create components that work together to provide a complete functionality. This pattern is especially useful for building complex UI components while maintaining flexibility and reusability.
+
+![Component Architecture](https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+*Female software engineer coding on dual monitors, representing component architecture*
 
 ```jsx
 // Example: Modal compound component
@@ -68,6 +82,10 @@ Modal.Footer = ({ children }) => (
 
 The render prop pattern is a technique for sharing code between React components using a prop whose value is a function. This pattern provides maximum flexibility and reusability.
 
+![Code Flexibility](https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+*Laptop with code editor open, representing flexible code patterns*
+
 ```jsx
 // Example: Data fetcher with render prop
 const DataFetcher = ({ url, render }) => {
@@ -105,6 +123,10 @@ const DataFetcher = ({ url, render }) => {
 ## Custom Hooks
 
 Custom hooks allow you to extract component logic into reusable functions. They're the most powerful pattern for sharing stateful logic between components.
+
+![Reusable Logic](https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+*Developer typing code on a laptop, representing reusable logic patterns*
 
 ```jsx
 // Example: useLocalStorage hook
@@ -154,6 +176,10 @@ const UserProfile = () => {
 
 The Context API is perfect for sharing global state, but it should be used carefully to avoid performance issues.
 
+![Global State Management](https://images.pexels.com/photos/3861959/pexels-photo-3861959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+*Male software engineer working on code, representing global state management*
+
 ```jsx
 // Example: Theme context with optimization
 const ThemeContext = createContext();
@@ -192,6 +218,10 @@ Modern React applications need to be optimized for performance. Here are some ke
 
 ### React.memo for Component Memoization
 
+![Performance Optimization](https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+*Woman coding on a laptop in a modern office environment, representing performance optimization*
+
 ```jsx
 const ExpensiveComponent = React.memo(({ data, onUpdate }) => {
   return (
@@ -211,6 +241,10 @@ const ExpensiveComponent = React.memo(({ data, onUpdate }) => {
 ```
 
 ### useMemo and useCallback for Expensive Operations
+
+![Code Optimization](https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+*Close-up shot of a person coding on a laptop, representing code optimization*
 
 ```jsx
 const SearchComponent = ({ items, query }) => {
@@ -239,6 +273,10 @@ const SearchComponent = ({ items, query }) => {
 ## Conclusion
 
 Modern React patterns provide powerful tools for building scalable applications. By understanding and implementing these patterns, you can create more maintainable, performant, and reusable code. Remember to choose the right pattern for your specific use case, and always consider the trade-offs between flexibility and complexity.
+
+![Development Success](https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+*Laptop displaying code with reflection, representing successful development patterns*
 
 The key to successful React development is not just knowing these patterns, but understanding when and how to apply them effectively. Start with the simplest solution and gradually introduce more complex patterns as your application grows and requirements evolve.
 
