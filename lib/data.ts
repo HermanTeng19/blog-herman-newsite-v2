@@ -117,8 +117,8 @@ export const profileInfo = {
   profileImage: '/images/herman-profile.png',
   aboutImage: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600',
   bio: {
-    intro: "I'm a passionate front-end architect and tech blogger with over 8 years of experience building scalable web applications. I specialize in modern JavaScript frameworks, performance optimization, and creating exceptional user experiences.",
-    personal: "When I'm not coding, you can find me exploring new technologies, writing technical articles, or traveling to discover new cultures and perspectives. I believe that great software comes from understanding both the technical and human aspects of development.",
-    collaboration: "I'm always excited to collaborate on innovative projects and share knowledge with the development community through my blog and open-source contributions.",
+    intro: "I'm a Senior Data Engineer and passionate Gen AI advocate with over 10 years of experience architecting scalable data solutions and AI-powered applications. I specialize in Microsoft Azure data services, machine learning pipelines, and building intelligent systems that transform how organizations leverage their data.",
+    personal: "When I'm not designing data architectures or experimenting with the latest AI models, you can find me writing technical articles about data engineering best practices, sharing insights on LinkedIn about the future of AI, or contributing to open-source projects that bridge the gap between traditional data engineering and generative AI.",
+    collaboration: "I'm passionate about mentoring data professionals, collaborating on innovative AI projects, and sharing knowledge with the data engineering community. I believe in the power of combining traditional data engineering principles with cutting-edge AI technologies to solve complex business challenges.",
   },
 }; 

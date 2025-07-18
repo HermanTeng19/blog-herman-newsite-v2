@@ -1,6 +1,32 @@
 import Image from 'next/image';
+import { Metadata } from 'next';
 import Layout from '@/components/Layout';
 import { profileInfo } from '@/lib/data';
+
+export const metadata: Metadata = {
+  title: 'About Herman Teng - Senior Data Engineer & Gen AI Advocate',
+  description: 'Learn about Herman Teng, a Senior Data Engineer and Gen AI advocate with 10+ years of experience in Azure data services, machine learning pipelines, and AI-powered applications.',
+  keywords: [
+    'About Herman Teng',
+    'Senior Data Engineer',
+    'Gen AI Advocate',
+    'Data Engineering Experience',
+    'Azure Data Services',
+    'Machine Learning',
+    'AI Solutions',
+    'Data Architecture'
+  ],
+  openGraph: {
+    title: 'About Herman Teng - Senior Data Engineer & Gen AI Advocate',
+    description: 'Learn about Herman Teng, a Senior Data Engineer and Gen AI advocate with 10+ years of experience in Azure data services, machine learning pipelines, and AI-powered applications.',
+    url: 'https://hermanteng.dev/about',
+    type: 'profile',
+  },
+  twitter: {
+    title: 'About Herman Teng - Senior Data Engineer & Gen AI Advocate',
+    description: 'Learn about Herman Teng, a Senior Data Engineer and Gen AI advocate with 10+ years of experience in Azure data services, machine learning pipelines, and AI-powered applications.',
+  },
+};
 
 export default function About() {
   return (

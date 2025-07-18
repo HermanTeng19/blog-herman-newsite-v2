@@ -314,11 +314,11 @@
   .prose pre code {
     @apply text-gray-800 dark:text-gray-200;
   }
-  
+
   .prose .hljs {
     @apply bg-transparent;
   }
-  
+
   /* Code block language labels */
   .prose pre {
     position: relative;
@@ -340,7 +340,7 @@
     letter-spacing: 0.05em;
     z-index: 10;
   }
-  
+
   .dark .prose pre code[class*="language-"]::before,
   .dark .prose pre code[class*="hljs-"]::before {
     background: #4b5563;
@@ -535,7 +535,7 @@
   .prose pre code[class*="hljs-vim"]::before {
     content: "VIM";
   }
-  
+
   @keyframes scroll-left {
     0% {
       transform: translateX(0);

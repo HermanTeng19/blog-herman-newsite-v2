@@ -1,6 +1,6 @@
 ---
 title: "The $17 Billion Question: How JPMorgan's AI Bet Is Reshaping Every Tech Career in Banking"
-date: "2024-12-20"
+date: "2025-07-03"
 excerpt: "What happens when the world's largest bank commits $17 billion to AI and plans to deploy over 1,000 AI use cases by 2026? Every technology professional in banking needs to have an answer."
 tags: ["AI", "Banking", "Technology", "Career Development", "FinTech", "Digital Transformation"]
 coverImage: "https://media.licdn.com/dms/image/v2/D5612AQEKQzaI0IdpMQ/article-cover_image-shrink_720_1280/B56ZfR81rYHQAQ-/0/1751574082688?e=2147483647&v=beta&t=ppgvDIs119Bwt4pzXQENU-byOXRjWbzwqs2W7bdP0nc"

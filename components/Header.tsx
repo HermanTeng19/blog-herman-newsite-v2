@@ -105,21 +105,21 @@ export default function Header() {
 
           {/* Navigation and Theme Toggle on right */}
           <div className="flex items-center space-x-6">
-            <nav className="flex space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
+          <nav className="flex space-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
                   className={`nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors relative ${
-                    isActive(item.href) 
+                  isActive(item.href) 
                       ? 'text-blue-600 dark:text-blue-400 after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:rounded-sm' 
-                      : ''
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
+                    : ''
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
             <ThemeToggle />
           </div>
         </div>

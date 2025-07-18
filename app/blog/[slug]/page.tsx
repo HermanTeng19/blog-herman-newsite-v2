@@ -1,8 +1,48 @@
 import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
+import { Metadata } from 'next';
 import Layout from '@/components/Layout';
 import GoToTopButton from '@/components/GoToTopButton';
 import { getPostBySlug, getAllPostSlugs } from '@/lib/blog';
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = await getPostBySlug(params.slug);
+  
+  if (!post) {
+    return {
+      title: 'Post Not Found - Herman Teng Blog',
+    };
+  }
+
+  return {
+    title: `${post.title} - Herman Teng Data Engineering & AI Blog`,
+    description: post.excerpt || `Read Herman Teng's article on ${post.title} - insights on data engineering, AI, and technology.`,
+    keywords: [
+      ...post.tags,
+      'Herman Teng',
+      'Data Engineering',
+      'AI Blog',
+      'Tech Articles',
+      'Machine Learning',
+      'Azure Services'
+    ],
+    authors: [{ name: post.author || 'Herman Teng' }],
+    openGraph: {
+      title: `${post.title} - Herman Teng Data Engineering & AI Blog`,
+      description: post.excerpt || `Read Herman Teng's article on ${post.title} - insights on data engineering, AI, and technology.`,
+      url: `https://hermanteng.dev/blog/${params.slug}`,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author || 'Herman Teng'],
+      tags: post.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} - Herman Teng Data Engineering & AI Blog`,
+      description: post.excerpt || `Read Herman Teng's article on ${post.title} - insights on data engineering, AI, and technology.`,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();

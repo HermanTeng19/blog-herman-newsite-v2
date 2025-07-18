@@ -1,9 +1,41 @@
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 import Layout from '@/components/Layout';
 import BlogCard from '@/components/BlogCard';
 import GoToTopButton from '@/components/GoToTopButton';
 import Pagination from '@/components/Pagination';
 import { getPaginatedPosts } from '@/lib/blog';
+
+export async function generateMetadata({ params }: { params: { page: string } }): Promise<Metadata> {
+  const page = parseInt(params.page);
+  const pageTitle = page === 1 ? 'Blog' : `Blog - Page ${page}`;
+  
+  return {
+    title: `${pageTitle} - Herman Teng Data Engineering & AI Blog`,
+    description: 'Explore Herman Teng\'s latest articles on data engineering, AI, machine learning, Azure services, and insights into the future of technology and artificial intelligence.',
+    keywords: [
+      'Data Engineering Blog',
+      'AI Articles',
+      'Machine Learning',
+      'Azure Data Services',
+      'Tech Insights',
+      'Data Science',
+      'Artificial Intelligence',
+      'Cloud Computing',
+      'Herman Teng Blog'
+    ],
+    openGraph: {
+      title: `${pageTitle} - Herman Teng Data Engineering & AI Blog`,
+      description: 'Explore Herman Teng\'s latest articles on data engineering, AI, machine learning, Azure services, and insights into the future of technology and artificial intelligence.',
+      url: `https://hermanteng.dev/blog/page/${page}`,
+      type: 'website',
+    },
+    twitter: {
+      title: `${pageTitle} - Herman Teng Data Engineering & AI Blog`,
+      description: 'Explore Herman Teng\'s latest articles on data engineering, AI, machine learning, Azure services, and insights into the future of technology and artificial intelligence.',
+    },
+  };
+}
 
 export async function generateStaticParams() {
   // Generate static params for all possible pages

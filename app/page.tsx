@@ -1,10 +1,37 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
+import { Metadata } from 'next';
 import Layout from '@/components/Layout';
 import TechCarousel from '@/components/TechCarousel';
 import { getLatestPost } from '@/lib/blog';
 import { profileInfo, featuredProject } from '@/lib/data';
+
+export const metadata: Metadata = {
+  title: 'Herman Teng - Senior Data Engineer & Gen AI Advocate | Home',
+  description: 'Welcome to Herman Teng\'s personal website. Senior Data Engineer and Gen AI advocate with 10+ years of experience in Azure data services, machine learning pipelines, and AI-powered applications.',
+  keywords: [
+    'Herman Teng',
+    'Senior Data Engineer',
+    'Gen AI Advocate',
+    'Azure Data Services',
+    'Machine Learning',
+    'AI Solutions',
+    'Data Engineering',
+    'Tech Blog',
+    'Portfolio'
+  ],
+  openGraph: {
+    title: 'Herman Teng - Senior Data Engineer & Gen AI Advocate | Home',
+    description: 'Welcome to Herman Teng\'s personal website. Senior Data Engineer and Gen AI advocate with 10+ years of experience in Azure data services, machine learning pipelines, and AI-powered applications.',
+    url: 'https://hermanteng.dev',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Herman Teng - Senior Data Engineer & Gen AI Advocate | Home',
+    description: 'Welcome to Herman Teng\'s personal website. Senior Data Engineer and Gen AI advocate with 10+ years of experience in Azure data services, machine learning pipelines, and AI-powered applications.',
+  },
+};
 
 export default async function Home() {
   const latestPost = await getLatestPost();
