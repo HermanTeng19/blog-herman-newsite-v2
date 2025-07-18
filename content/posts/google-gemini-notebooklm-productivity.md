@@ -1,6 +1,6 @@
 ---
 title: "Supercharge Your Productivity: Mastering Google Gemini Pro 2.5 and NotebookLM for Maximum Efficiency"
-date: "2024-12-30"
+date: "2025-05-30"
 excerpt: "Discover how to leverage Google's latest AI tools - Gemini Pro 2.5 and NotebookLM - to revolutionize your workflow, enhance research capabilities, and boost productivity across various professional domains."
 tags: ["AI", "Google", "Productivity", "NotebookLM", "Gemini", "Workflow", "Research"]
 coverImage: "https://images.pexels.com/photos/5792860/pexels-photo-5792860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
