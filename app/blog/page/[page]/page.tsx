@@ -41,8 +41,8 @@ export default async function BlogPage({ params }: BlogPageProps) {
   return (
     <Layout>
       <div className="mb-8">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Blog</h2>
-        <p className="text-xl text-gray-600">Latest articles and insights</p>
+        <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Blog</h2>
+        <p className="text-xl text-gray-600 dark:text-gray-300">Latest articles and insights</p>
       </div>
       
       <div className="space-y-8">
@@ -52,8 +52,8 @@ export default async function BlogPage({ params }: BlogPageProps) {
           ))
         ) : (
           <div className="text-center py-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">No blog posts yet</h3>
-            <p className="text-gray-600">Check back soon for new articles and insights.</p>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">No blog posts yet</h3>
+            <p className="text-gray-600 dark:text-gray-300">Check back soon for new articles and insights.</p>
           </div>
         )}
       </div>

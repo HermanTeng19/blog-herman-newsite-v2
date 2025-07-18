@@ -43,7 +43,7 @@ export default function Pagination({ currentPage, totalPages, totalPosts }: Pagi
   return (
     <div className="mt-12 mb-8">
       {/* Posts count info */}
-      <div className="text-center text-gray-600 mb-6">
+      <div className="text-center text-gray-600 dark:text-gray-400 mb-6">
         Showing page {currentPage} of {totalPages} ({totalPosts} total posts)
       </div>
       
@@ -53,13 +53,13 @@ export default function Pagination({ currentPage, totalPages, totalPosts }: Pagi
         {currentPage > 1 ? (
           <Link 
             href={`/blog/page/${currentPage - 1}`}
-            className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-gray-700 transition-colors"
+            className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
           >
             <ChevronLeftIcon className="w-4 h-4 mr-1" />
             Previous
           </Link>
         ) : (
-          <span className="flex items-center px-3 py-2 text-sm font-medium text-gray-300 bg-gray-100 border border-gray-200 rounded-lg cursor-not-allowed">
+          <span className="flex items-center px-3 py-2 text-sm font-medium text-gray-300 dark:text-gray-600 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg cursor-not-allowed">
             <ChevronLeftIcon className="w-4 h-4 mr-1" />
             Previous
           </span>
@@ -70,14 +70,14 @@ export default function Pagination({ currentPage, totalPages, totalPosts }: Pagi
           {pageNumbers.map((page, index) => (
             <div key={index}>
               {page === '...' ? (
-                <span className="px-3 py-2 text-sm font-medium text-gray-500">...</span>
+                <span className="px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400">...</span>
               ) : (
                 <Link
                   href={`/blog/page/${page}`}
                   className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                     currentPage === page
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
+                      ? 'bg-blue-600 dark:bg-blue-500 text-white'
+                      : 'text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'
                   }`}
                 >
                   {page}
@@ -91,13 +91,13 @@ export default function Pagination({ currentPage, totalPages, totalPosts }: Pagi
         {currentPage < totalPages ? (
           <Link 
             href={`/blog/page/${currentPage + 1}`}
-            className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-gray-700 transition-colors"
+            className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
           >
             Next
             <ChevronRightIcon className="w-4 h-4 ml-1" />
           </Link>
         ) : (
-          <span className="flex items-center px-3 py-2 text-sm font-medium text-gray-300 bg-gray-100 border border-gray-200 rounded-lg cursor-not-allowed">
+          <span className="flex items-center px-3 py-2 text-sm font-medium text-gray-300 dark:text-gray-600 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg cursor-not-allowed">
             Next
             <ChevronRightIcon className="w-4 h-4 ml-1" />
           </span>
