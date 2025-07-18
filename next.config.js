@@ -8,7 +8,8 @@ const nextConfig = {
       'i.ibb.co',
       'o.130014.xyz',
       'www.cathrinewilhelmsen.net',
-      'www.wailian.work'
+      'www.wailian.work',
+      'media.licdn.com'
     ],
   },
 };
