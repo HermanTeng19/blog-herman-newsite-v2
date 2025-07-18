@@ -15,8 +15,10 @@ export interface BlogPostFrontmatter {
   title: string;
   date: string;
   excerpt: string;
+  description?: string;
   tags: string[];
   image?: string;
+  coverImage?: string;
   author?: string;
   featured?: boolean;
 }

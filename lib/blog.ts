@@ -67,7 +67,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
       content: contentHtml,
       tags: frontmatter.tags || [],
       readingTime: calculateReadingTime(content),
-      image: frontmatter.image,
+      image: frontmatter.image || frontmatter.coverImage,
       author: frontmatter.author || 'Herman Teng',
       featured: frontmatter.featured || false,
     };
