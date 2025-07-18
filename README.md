@@ -11,6 +11,7 @@ A modern, high-performance blog website built with Next.js 14 (App Router), Type
 - **Performance Optimized**: Image optimization, code splitting, and caching
 - **Type Safety**: Full TypeScript support throughout the application
 - **Component Library**: Reusable UI components with consistent styling
+- **Dark Mode Support**: Light/dark theme toggle with persistent user preference
 
 ## 🎨 Design Features
 
@@ -19,6 +20,7 @@ A modern, high-performance blog website built with Next.js 14 (App Router), Type
 - **Hover Effects**: Smooth transitions and interactive elements
 - **Custom Typography**: Inter and JetBrains Mono fonts
 - **Color Scheme**: Professional gradient backgrounds and consistent branding
+- **Theme Toggle**: Animated sun/moon icon for seamless light/dark mode switching
 
 ## 📁 Project Structure
 
@@ -36,13 +38,16 @@ A modern, high-performance blog website built with Next.js 14 (App Router), Type
 │   ├── Layout.tsx         # Main layout wrapper
 │   ├── BlogCard.tsx       # Blog post card component
 │   ├── ProjectCard.tsx    # Portfolio project card
-│   └── TechCarousel.tsx   # Animated tech stack carousel
+│   ├── TechCarousel.tsx   # Animated tech stack carousel
+│   ├── ThemeToggle.tsx    # Light/dark mode toggle button
+│   └── ThemeProvider.tsx  # Theme context provider
 ├── content/               # Markdown content
 │   └── posts/             # Blog posts
 ├── lib/                   # Utility functions and data
 │   ├── blog.ts            # Blog data management
 │   ├── data.ts            # Static data (projects, tech stack)
-│   └── types.ts           # TypeScript definitions
+│   ├── types.ts           # TypeScript definitions
+│   └── theme.ts           # Theme utility functions
 ├── public/                # Static assets
 └── prototype/             # Original HTML prototype
 ```
@@ -194,6 +199,7 @@ npm run lint     # Run ESLint
 - Responsive navigation with logo and menu
 - Active state indicators
 - Mobile-friendly design
+- Light/dark mode toggle with animated icons
 
 ### Bento Grid Layout
 - CSS Grid-based layout
@@ -221,6 +227,26 @@ npm run lint     # Run ESLint
 - **Font Optimization**: Google Fonts with display swap
 - **SEO Optimization**: Meta tags, Open Graph, and Twitter Cards
 
+## 🌙 Dark Mode
+
+### Theme System
+- **Automatic Detection**: Detects user's system preference on first visit
+- **Persistent Storage**: Remembers user's theme choice using localStorage
+- **Smooth Transitions**: Animated theme switching with CSS transitions
+- **Comprehensive Coverage**: All components and pages support both themes
+
+### Theme Toggle
+- **Animated Icons**: Sun icon for light mode, moon icon for dark mode
+- **Header Integration**: Located in the top-right navigation area
+- **Accessibility**: Proper ARIA labels and keyboard navigation support
+- **Visual Feedback**: Hover effects and active states for better UX
+
+### Dark Mode Styling
+- **Text Colors**: White headings and light gray body text for optimal contrast
+- **Backgrounds**: Dark backgrounds with subtle gradients
+- **Cards & Components**: Dark variants for all UI components
+- **Images**: Maintained visibility and contrast in both themes
+
 ## 🎨 Styling
 
 ### Tailwind CSS Configuration
@@ -228,6 +254,7 @@ npm run lint     # Run ESLint
 - Custom animations and keyframes
 - Responsive utilities
 - Component-specific styles
+- Dark mode variants for all color utilities
 
 ### Custom CSS Classes
 - `.bento-grid`: Main grid layout
@@ -268,7 +295,7 @@ The website is fully responsive with:
 - [ ] Search functionality
 - [ ] Comment system
 - [ ] Newsletter subscription
-- [ ] Dark mode toggle
+- [x] Dark mode toggle
 - [ ] RSS feed
 - [ ] Related posts suggestions
 - [ ] Social sharing buttons
