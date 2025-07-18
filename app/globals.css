@@ -320,6 +320,10 @@
   }
   
   /* Code block language labels */
+  .prose pre {
+    position: relative;
+  }
+  
   .prose pre code[class*="language-"]::before,
   .prose pre code[class*="hljs-"]::before {
     content: attr(data-language);
@@ -334,6 +338,7 @@
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.05em;
+    z-index: 10;
   }
   
   .dark .prose pre code[class*="language-"]::before,

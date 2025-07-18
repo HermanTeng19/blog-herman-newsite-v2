@@ -6,6 +6,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
+import { visit } from 'unist-util-visit';
 import { BlogPost, BlogPostFrontmatter, PaginatedPosts, BlogMetadata } from './types';
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
@@ -13,6 +14,36 @@ const postsDirectory = path.join(process.cwd(), 'content/posts');
 // Ensure posts directory exists
 if (!fs.existsSync(postsDirectory)) {
   fs.mkdirSync(postsDirectory, { recursive: true });
+}
+
+// Custom rehype plugin to add data-language attribute to code blocks
+function rehypeCodeLanguageLabels() {
+  return (tree: any) => {
+    visit(tree, 'element', (node) => {
+      if (node.tagName === 'pre' && node.children && node.children[0] && node.children[0].tagName === 'code') {
+        const codeElement = node.children[0];
+        const className = codeElement.properties?.className;
+        
+        if (className && Array.isArray(className)) {
+          // Find language class (e.g., 'language-javascript', 'hljs-javascript')
+          const languageClass = className.find((cls: string) => 
+            cls.startsWith('language-') || cls.startsWith('hljs-')
+          );
+          
+          if (languageClass) {
+            // Extract language from class name
+            const language = languageClass.replace('language-', '').replace('hljs-', '');
+            
+            // Add data-language attribute
+            if (!codeElement.properties) {
+              codeElement.properties = {};
+            }
+            codeElement.properties['data-language'] = language;
+          }
+        }
+      }
+    });
+  };
 }
 
 export function calculateReadingTime(content: string): string {
@@ -49,6 +80,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
       .use(remarkRehype)
       .use(rehypeSlug) // Add IDs to headings for Table of Contents navigation
       .use(rehypeHighlight)
+      .use(rehypeCodeLanguageLabels) // Add data-language attributes for language labels
       .use(rehypeStringify)
       .process(content);
     const contentHtml = processedContent.toString();
