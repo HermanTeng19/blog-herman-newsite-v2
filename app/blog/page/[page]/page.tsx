@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { page: string } })
     openGraph: {
       title: `${pageTitle} - Herman Teng Data Engineering & AI Blog`,
       description: 'Explore Herman Teng\'s latest articles on data engineering, AI, machine learning, Azure services, and insights into the future of technology and artificial intelligence.',
-      url: `https://hermanteng.dev/blog/page/${page}`,
+      url: `https://blog.hermanteng.net/blog/page/${page}`,
       type: 'website',
     },
     twitter: {

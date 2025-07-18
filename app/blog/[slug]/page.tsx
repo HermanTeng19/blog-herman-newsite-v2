@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: `${post.title} - Herman Teng Data Engineering & AI Blog`,
       description: post.excerpt || `Read Herman Teng's article on ${post.title} - insights on data engineering, AI, and technology.`,
-      url: `https://hermanteng.dev/blog/${params.slug}`,
+      url: `https://blog.hermanteng.net/blog/${params.slug}`,
       type: 'article',
       publishedTime: post.date,
       authors: [post.author || 'Herman Teng'],

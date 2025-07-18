@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://hermanteng.dev/sitemap.xml
+Sitemap: https://blog.hermanteng.net/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1 

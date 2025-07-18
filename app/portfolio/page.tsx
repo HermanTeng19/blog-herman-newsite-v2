@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Portfolio - Herman Teng Data Engineering & AI Projects',
     description: 'Explore Herman Teng\'s portfolio of data engineering projects, AI-powered applications, and innovative solutions built with Microsoft Azure, machine learning, and modern technologies.',
-    url: 'https://hermanteng.dev/portfolio',
+    url: 'https://blog.hermanteng.net/portfolio',
     type: 'website',
   },
   twitter: {

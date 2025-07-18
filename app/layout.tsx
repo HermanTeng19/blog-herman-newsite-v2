@@ -2,11 +2,22 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
+// Get environment variables with fallbacks
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blog.hermanteng.net';
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Herman Teng - Data Engineering & AI Blog';
+const siteDescription = process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Senior Data Engineer and passionate Gen AI advocate with 10+ years of experience architecting scalable data solutions and AI-powered applications. Specializing in Microsoft Azure data services, machine learning pipelines, and building intelligent systems.';
+const authorName = process.env.NEXT_PUBLIC_AUTHOR_NAME || 'Herman Teng';
+const authorTitle = process.env.NEXT_PUBLIC_AUTHOR_TITLE || 'Senior Data Engineer & Gen AI Advocate';
+const authorTwitter = process.env.NEXT_PUBLIC_AUTHOR_TWITTER || '@hermanteng';
+const themeColor = process.env.NEXT_PUBLIC_THEME_COLOR || '#3b82f6';
+const openGraphType = (process.env.NEXT_PUBLIC_OPENGRAPH_TYPE as 'website' | 'article' | 'profile') || 'website';
+const twitterCardType = (process.env.NEXT_PUBLIC_TWITTER_CARD_TYPE as 'summary_large_image' | 'summary' | 'player' | 'app') || 'summary_large_image';
+
 export const metadata: Metadata = {
-  title: 'Herman Teng - Senior Data Engineer & Gen AI Advocate',
-  description: 'Senior Data Engineer and passionate Gen AI advocate with 10+ years of experience architecting scalable data solutions and AI-powered applications. Specializing in Microsoft Azure data services, machine learning pipelines, and building intelligent systems.',
+  title: `${authorName} - ${authorTitle}`,
+  description: siteDescription,
   keywords: [
-    'Herman Teng',
+    authorName,
     'Senior Data Engineer',
     'Gen AI Advocate',
     'Microsoft Azure',
@@ -22,35 +33,35 @@ export const metadata: Metadata = {
     'Big Data',
     'Cloud Computing'
   ],
-  authors: [{ name: 'Herman Teng' }],
-  creator: 'Herman Teng',
-  publisher: 'Herman Teng',
+  authors: [{ name: authorName }],
+  creator: authorName,
+  publisher: authorName,
   robots: 'index, follow',
   openGraph: {
-    title: 'Herman Teng - Senior Data Engineer & Gen AI Advocate',
-    description: 'Senior Data Engineer and passionate Gen AI advocate with 10+ years of experience architecting scalable data solutions and AI-powered applications. Specializing in Microsoft Azure data services, machine learning pipelines, and building intelligent systems.',
-    url: 'https://hermanteng.dev',
-    siteName: 'Herman Teng - Data Engineering & AI Blog',
-    locale: 'en_US',
-    type: 'website',
+    title: `${authorName} - ${authorTitle}`,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: siteName,
+    locale: process.env.NEXT_PUBLIC_DEFAULT_LOCALE || 'en_US',
+    type: openGraphType,
     images: [
       {
         url: '/images/herman-profile.png',
         width: 1200,
         height: 630,
-        alt: 'Herman Teng - Senior Data Engineer & Gen AI Advocate',
+        alt: `${authorName} - ${authorTitle}`,
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Herman Teng - Senior Data Engineer & Gen AI Advocate',
-    description: 'Senior Data Engineer and passionate Gen AI advocate with 10+ years of experience architecting scalable data solutions and AI-powered applications.',
-    creator: '@hermanteng',
+    card: twitterCardType,
+    title: `${authorName} - ${authorTitle}`,
+    description: siteDescription,
+    creator: authorTwitter,
     images: ['/images/herman-profile.png'],
   },
   alternates: {
-    canonical: 'https://hermanteng.dev',
+    canonical: siteUrl,
   },
   category: 'technology',
   classification: 'Data Engineering, AI, Machine Learning, Cloud Computing',

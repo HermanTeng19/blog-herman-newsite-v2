@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Herman Teng - Senior Data Engineer & Gen AI Advocate',
     description: 'Learn about Herman Teng, a Senior Data Engineer and Gen AI advocate with 10+ years of experience in Azure data services, machine learning pipelines, and AI-powered applications.',
-    url: 'https://hermanteng.dev/about',
+    url: 'https://blog.hermanteng.net/about',
     type: 'profile',
   },
   twitter: {
