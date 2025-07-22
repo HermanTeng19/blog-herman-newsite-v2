@@ -266,103 +266,47 @@ npm run lint     # Run ESLint
 ## 🔧 Configuration
 
 ### Environment Variables
-No environment variables required for basic functionality.
+
+The following environment variables are used in this project. For Vercel deployment, set them in the Vercel dashboard under Project → Settings → Environment Variables.
+
+| Variable Name                  | Required?   | Purpose/Notes                                                      |
+|------------------------------- |------------|--------------------------------------------------------------------|
+| `NEXT_PUBLIC_SITE_URL`         | Recommended| Canonical site URL for SEO/meta tags                               |
+| `NEXT_PUBLIC_SITE_NAME`        | Recommended| Site name for SEO/meta tags                                        |
+| `NEXT_PUBLIC_SITE_DESCRIPTION` | Recommended| Site description for SEO/meta tags                                 |
+| `NEXT_PUBLIC_AUTHOR_NAME`      | Optional   | Author name for meta tags                                          |
+| `NEXT_PUBLIC_AUTHOR_TITLE`     | Optional   | Author title for meta tags                                         |
+| `NEXT_PUBLIC_AUTHOR_TWITTER`   | Optional   | Twitter handle for meta tags                                       |
+| `NEXT_PUBLIC_THEME_COLOR`      | Optional   | Theme color for browser UI/meta tags                               |
+| `NEXT_PUBLIC_OPENGRAPH_TYPE`   | Optional   | OpenGraph type (`website`, `article`, etc.)                        |
+| `NEXT_PUBLIC_TWITTER_CARD_TYPE`| Optional   | Twitter card type (`summary_large_image`, etc.)                    |
+| `NEXT_PUBLIC_DEFAULT_LOCALE`   | Optional   | Default locale for OpenGraph                                       |
+| `PEXELS_API_KEY`               | Scripts    | API key for Pexels (used in scripts/replace-local-cover-images.ts) |
+| `UNSPLASH_ACCESS_KEY`          | Scripts    | API key for Unsplash (used in scripts/replace-local-cover-images.ts)|
+
+- Variables prefixed with `NEXT_PUBLIC_` are exposed to the browser and used for SEO, branding, and meta tags.
+- `PEXELS_API_KEY` and `UNSPLASH_ACCESS_KEY` are only needed if you use the image replacement script for local development or build steps.
+- If you do not set any environment variables, the site will use default values and still work, but for best SEO and branding, set the recommended ones.
+
+#### Example: .env.example
+
+```env
+# Public variables for SEO/branding
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+NEXT_PUBLIC_SITE_NAME=Your Site Name
+NEXT_PUBLIC_SITE_DESCRIPTION=Your site description
+NEXT_PUBLIC_AUTHOR_NAME=Your Name
+NEXT_PUBLIC_AUTHOR_TITLE=Your Title
+NEXT_PUBLIC_AUTHOR_TWITTER=@yourtwitter
+NEXT_PUBLIC_THEME_COLOR=#3b82f6
+NEXT_PUBLIC_OPENGRAPH_TYPE=website
+NEXT_PUBLIC_TWITTER_CARD_TYPE=summary_large_image
+NEXT_PUBLIC_DEFAULT_LOCALE=en_US
+
+# Only needed for scripts (not required for frontend deployment)
+PEXELS_API_KEY=your_pexels_api_key
+UNSPLASH_ACCESS_KEY=your_unsplash_access_key
+```
 
 ### Customization
-- Edit `lib/data.ts` to update tech stack and project information
-- Modify `app/globals.css` for custom styles
-- Update `lib/types.ts` for additional data types
-- Customize `components/` for UI modifications
-
-## 📱 Responsive Design
-
-The website is fully responsive with:
-- Mobile-first approach
-- Breakpoint-based layouts
-- Touch-friendly interactions
-- Optimized images for different screen sizes
-
-## 🔍 SEO Features
-
-- Automatic sitemap generation
-- Meta tags with Open Graph and Twitter Cards
-- Structured data for blog posts
-- Semantic HTML markup
-- Fast loading times for better search ranking
-
-## 🚦 Future Enhancements
-
-- [ ] Search functionality
-- [ ] Comment system
-- [ ] Newsletter subscription
-- [x] Dark mode toggle
-- [ ] RSS feed
-- [ ] Related posts suggestions
-- [ ] Social sharing buttons
-- [ ] Analytics integration
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👤 Author
-
-**Herman Teng**
-- Website: [hermanteng.dev](https://hermanteng.dev)
-- Email: contact@hermanteng.dev
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](issues).
-
-## ⭐ Show Your Support
-
-Give a ⭐️ if this project helped you!
-
----
-
-Built with ❤️ using Next.js, TypeScript, and Tailwind CSS 
-
-## 🛠️ How to Add or Modify a Project in the Portfolio
-
-### Adding a New Project
-1. Open `lib/data.ts` in your code editor.
-2. Locate the `projects` array. Each project is a JSON object inside this array.
-3. Copy an existing project object as a template:
-   ```js
-   {
-     id: 'your-unique-id',
-     title: 'Your Project Title',
-     description: 'A short description of your project.',
-     image: 'https://your-image-url.jpg',
-     technologies: ['React', 'Node.js', 'TypeScript'],
-     link: 'https://your-live-demo.com',
-     github: 'https://github.com/your-repo',
-     featured: false // or true if you want it to appear as Featured Project
-   },
-   ```
-4. Paste it after the last project in the array (but before the closing `];`).
-5. Fill in your own details for each field:
-   - `id`: Unique string, no spaces (e.g., 'my-cool-app')
-   - `title`: Name of your project
-   - `description`: Short summary
-   - `image`: URL to a project image (use a real image URL or upload to `public/images/projects/` and use a relative path)
-   - `technologies`: Array of tech used
-   - `link`: (Optional) Live demo URL
-   - `github`: (Optional) GitHub repo URL
-   - `featured`: `true` to show as Featured Project on Home page, otherwise `false`
-6. Save the file.
-7. Refresh your Portfolio page to see the new project.
-
-### Editing an Existing Project
-1. In `lib/data.ts`, find the project you want to edit in the `projects` array.
-2. Change any field (title, description, image, etc.) as needed.
-3. Save the file and refresh your site.
-
-### Tips
-- The `id` must be unique for each project.
-- Only one project should have `featured: true` for the Home page Featured Project.
-- Use high-quality images for best appearance.
-- If running in development (`npm run dev`), just save and refresh. For production, rebuild with `npm run build`.
-
---- 
+- Edit `lib/data.ts`
